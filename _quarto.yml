@@ -1,0 +1,10 @@
+project:
+  type: website
+
+format:
+  html:
+    toc: true
+    theme: cosmo
+    number-sections: true
+    code-fold: true
+    include-in-header: hypothes.is.html
