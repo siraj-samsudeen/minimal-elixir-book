@@ -1,6 +1,5 @@
 ---
 title: Minimal Elixir to be Productive in Phoenix
-jupyter: python3
 ---
 
 
