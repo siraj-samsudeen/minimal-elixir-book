@@ -483,9 +483,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Keep it minimal - focus on the 20% of the language that will the reader 80% returns on his time invested</li>
 <li>Point out the joyful developer experience in Elixir’s design whenever possible.</li>
 </ol>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>So, where should I start with Elixir?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Here are 3 key ideas that you will see mentioned a lot in Elixir - we will go through some hands-on exercises to understand them.</p>
 <ol type="1">
 <li>Immutability by default</li>
@@ -497,7 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="interactive-elixir-shell" class="level2" data-number="0.4">
 <h2 data-number="0.4" class="anchored" data-anchor-id="interactive-elixir-shell"><span class="header-section-number">0.4</span> Interactive Elixir Shell</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>here is what I see in my iTerm - I am on a Mac.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">38</span><span class="fu">)</span><span class="op">&gt;</span> i <span class="st">"cat"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Term</span></span>
@@ -515,10 +515,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="vs">  String, :binary</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="vs">Implemented protocols</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="vs">  Collectable, IEx.Info, Inspect, JSON.Encoder, List.Chars, String.Chars</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! I see you have <code>iex</code> working correctly. The <code>i</code> function gives you information about any value - in this case showing that “cat” is a binary (You expected to see string - right? But Elixir calls it binary and you will understand over time why. Don’t delve into too much as it is not important - Just remember to map string to binary whenever you have to do something with string).</p>
 <p>Now just type h and see what you get. You will see a lot of output and you have to scroll up a lot to see the first page. See whether you can find anything related to the previous command you executed in that first page.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes - I see the help for the <code>i</code> command I used - it says <code>i/1</code> is a function to introspect any value. A lot of jargons, I guess :). But I got it, but what is that suffix <code>/1</code> and <code>/2</code> I see quite a bit?</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">39</span><span class="fu">)</span><span class="op">&gt;</span> h</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -556,13 +556,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="vs">  • h/1             - prints help for the given module, function or macro</span></span>
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="vs">  • i/0             - prints information about the last value</span></span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="vs">  • i/1             - prints information about the given term</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great observation! The <code>/1</code> and <code>/2</code> notation is how Elixir indicates function arity - another jargon for the number of arguments a function takes. Just note this term <code>arity</code> as you will see it used quite a lot in Elixir.</p>
 <p>For example: - <code>i/1</code> means the <code>i</code> function that takes exactly 1 argument - <code>h/1</code> means the <code>h</code> function that takes exactly 1 argument - <code>h/0</code> means the <code>h</code> function that takes 0 arguments (which is what you just ran)</p>
 <p>This is important in Elixir because unlike Python, you can have multiple functions with the same name but different number of arguments, and they’re considered completely different functions.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>in python, the same function can’t be used again with a different number of arguments - right?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>That’s correct! In Python, you can’t have multiple functions with the same name but different numbers of arguments in the same scope.</p>
 <p>In Python, if you define a function twice, the second definition overwrites the first:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
@@ -586,7 +586,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Then try:</p>
 <pre><code>h h</code></pre>
 <p>What do you notice about the output of these commands?</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p><code>i</code> prints information about the data type of any given term.</p>
 <p>And <code>h h</code> prints the documentation for IEx.Helpers. Here is what I got for <code>h h</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">40</span><span class="fu">)</span><span class="op">&gt;</span> h h</span>
@@ -612,7 +612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    iex<span class="op">&gt;</span> h<span class="fu">(</span><span class="cn">Enum</span><span class="op">.</span>all?<span class="op">/</span><span class="dv">2</span><span class="fu">)</span></span>
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    iex<span class="op">&gt;</span> h<span class="fu">(</span><span class="cn">Enum</span><span class="op">.</span>all?<span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And interestingly, I already see the arity word here. It says <code>function/arity pair</code>. But I also see the word <code>macro</code> - what is that? I have heard of macro only in Excel, not in programming languagues like Python or JS.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Good question! Macros in programming languages are quite different from Excel macros.</p>
 <p>In Elixir (and many other languages), a macro is code that writes code. Think of it as a function that runs at compile time rather than runtime, and it can transform your code before it’s actually compiled.</p>
 <p>Here’s a simple way to understand it: - Regular functions: Take data as input, return data as output - Macros: Take code as input, return code as output</p>
@@ -624,22 +624,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="pattern-matching" class="level2" data-number="0.5">
 <h2 data-number="0.5" class="anchored" data-anchor-id="pattern-matching"><span class="header-section-number">0.5</span> Pattern Matching</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Destructuring (also called unpacking) in Python allows you to assign elements from a list (or any other iterable, if I want to get more precise) to multiple variables in a single statement.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> numbers</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b, c) <span class="co">#&gt; 1, 2, 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In this example: The list numbers contains three elements. The statement a, b, c = numbers unpacks the list so that a gets the first value, b the second, and c the third.</p>
 <p>Rule : The number of variables on the left must match the number of elements in the iterable on the right.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! You’ve got a solid understanding of Python’s destructuring.</p>
 <p>In Elixir, we have something similar but rather than calling <code>=</code> <code>assignment operator</code>, Elixir calls it <code>match operator</code> and when an Elixir pro looks at this line, he will say this is NOT an assignment, but pattern matching. It would make you wonder <code>What?</code> Let us tackle this one by one, by translating each line from your python code into Elixir equivalent.</p>
 <p>Now type this first line into iex:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>iex<span class="op">&gt;</span> list <span class="op">=</span> <span class="ot">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span><span class="ot">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>before you press Enter, think about what you expect to see. In python, if you type this into <code>ipython</code> what would you see? Try that first and then do the same thing in iex and let me know what you see as the difference.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Since assignment is just a statement, I did not expect anything to be printed in the console and ipython did not print anything. But surprisingly, iex printed the list <code>[1,2,3]</code> - why?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great observation! This is one of the first differences you’ll notice between Python and Elixir.</p>
 <p>In Elixir, every expression returns a value, and IEx automatically prints that returned value. When you write <code>list = [1, 2, 3]</code>, the match operator <code>=</code> returns the value on its right side after performing the match.</p>
 <p>This is actually quite convenient because:</p>
@@ -656,7 +656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, let’s try the destructuring part. In Elixir, type:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>iex<span class="op">&gt;</span> a, b, c <span class="op">=</span> numbers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What do you expect to happen? And what actually happens when you run it?</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Hmm. that is mean - iex screamed at me in anger - here is what I see, but the error stacktrace is just 4 lines - that is nice :)</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">2</span><span class="fu">)</span><span class="op">&gt;</span> a, b, c <span class="op">=</span> numbers</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">**</span> <span class="fu">(</span><span class="cn">SyntaxError</span><span class="fu">)</span> invalid syntax found on <span class="va">iex:</span><span class="dv">2</span>:<span class="dv">2</span>:</span>
@@ -670,7 +670,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">(</span>iex <span class="fl">1.18</span><span class="op">.</span><span class="dv">3</span><span class="fu">)</span> lib<span class="op">/</span>iex<span class="op">/</span>evaluator<span class="op">.</span><span class="va">ex:</span><span class="dv">189</span>: <span class="cn">IEx</span><span class="op">.</span><span class="cn">Evaluator</span><span class="op">.</span>loop<span class="op">/</span><span class="dv">1</span></span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">(</span>iex <span class="fl">1.18</span><span class="op">.</span><span class="dv">3</span><span class="fu">)</span> lib<span class="op">/</span>iex<span class="op">/</span>evaluator<span class="op">.</span><span class="va">ex:</span><span class="dv">34</span>: <span class="cn">IEx</span><span class="op">.</span><span class="cn">Evaluator</span><span class="op">.</span>init<span class="op">/</span><span class="dv">5</span></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">(</span>stdlib <span class="fl">6.2</span><span class="op">.</span><span class="dv">2</span><span class="fu">)</span> proc_lib<span class="op">.</span><span class="va">erl:</span><span class="dv">329</span>: <span class="va">:proc_lib</span><span class="op">.</span>init_p_do_apply<span class="op">/</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>So, you thought that you’re gonna learn by executing everything perfectly. Had I given you the proper syntax, I am sure you will have NOT noticed that there is a closing and opening bracket around <code>a, b, c</code> . By making a mistake, now you learnt that things are different from python here. To me, this is the essence of learning by doing - you actively experiment by doing things, off the track, to see how Elixir works. So you got to experience how Elixir reports error. Even though it is NOT clear why there is a syntax error before the comma, you can see that the stack trace and the overall error reporting is much shorter and sweeter compared to Python.</p>
 <p>But before we see the right syntax to make this statement work, let us understand how this ACTUALLY works in python. Most people don’t know how it works. Once you know how it works, you will see the elegance behind the design of Elixir.</p>
 <section id="pythons-unpacking-process" class="level3" data-number="0.5.1">
@@ -683,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Python unpacks</strong>: Takes the iterable and assigns each element to corresponding positions in the tuple pattern</li>
 </ol>
 <p>So, python is creating a tuple, behind the scenes, and uses it to unpack. But Elixir’s philosophy is being explicit. Hence, it wants you to specify things explicitly - so, you have to use a list on the left side too. So, can you fix the issue yourself?</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I went ahead and fixed the issue, and it was easy enough.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span>a, b, c<span class="ot">]</span> <span class="op">=</span> numbers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>I really like the fact that Elixir is returning the value on the right-hand side. I can easily see the values assigned to <code>a,b and c</code> without explicitly printing like in python.</p>
@@ -693,7 +693,7 @@ error: undefined function print/3 (there is no such import)
 └─ iex:7
 
 ** (CompileError) cannot compile code (errors have been logged)</code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! You fixed the pattern matching syntax perfectly - <code>[a, b, c] = list</code> is exactly right. You’re absolutely right - Elixir wants you to be explicit with the square brackets <code>[a, b, c]</code> to match the structure on both sides.</p>
 <p>And I love that you’re experimenting on your own!</p>
 <p>And you’re discovering another key difference: Elixir doesn’t have a <code>print</code> function like Python. Instead, you use <code>IO.puts</code> for printing. IO is the module in which puts function is defined - puts means put the string</p>
@@ -705,7 +705,7 @@ error: undefined function print/3 (there is no such import)
 <p>But notice how you can also just type the variable name and see its value, as in ipython:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What happens? And then see if you can figure out how to display all three values.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>No I could not figure it out. I tried <code>IO.puts(a,b)</code> and it reported an error about FunctionClause - that is weird - I was expecting it to say that print/2 is not found.</p>
 <pre><code>iex(8)&gt; IO.puts(a, b)
 ** (FunctionClauseError) no function clause matching in IO.puts/2
@@ -724,13 +724,13 @@ error: undefined function print/3 (there is no such import)
 
     (elixir 1.18.3) lib/io.ex:311: IO.puts/2
     iex:8: (file)</code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great experimentation! You’ve discovered something important about Elixir’s error reporting.</p>
 <p>The <code>FunctionClauseError</code> tells us that <code>IO.puts/2</code> exists (a function that takes 2 arguments), but your arguments don’t match what it expects. Function Clause is a key concept you need to understand as it falls under the core 20%. But we will come back to it later.</p>
 <p>Looking at the error, it shows that <code>IO.puts/2</code> expects the first argument to be a device (like <code>:stdio</code> for standard output), not just any value.</p>
 <p>So <code>IO.puts</code> has two versions: - <code>IO.puts/1</code> - prints to standard output - <code>IO.puts/2</code> - prints to a specific device. So, you when you called this function/arity combination, Elixir was expecting a device as the first arg. But you passed it a number. But don’t worry about it for now - we will come back to this idea later.</p>
 <p>Did you try to pass a list to IO.puts and see what it does?</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>It printed something weird - why?</p>
 <pre><code>iex(9)&gt; IO.puts([a,b,c])
 ^!^"^#
@@ -739,7 +739,7 @@ error: undefined function print/3 (there is no such import)
 <pre><code>iex&gt; IO.puts(a)
 1
 :ok</code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great observations! You’ve hit two important Elixir concepts:</p>
 <p><strong>The <code>:ok</code></strong>: This is called an atom in Elixir - Atoms (starting with&nbsp;<code>:</code>) are like symbols - constants that represent themselves. This is another key concept you need to understand as a lot of standard library functions return atoms to indicate success or failure. Here, <code>IO.puts</code> is returning this atom to indicate that it has done its job successfully.</p>
 <p>Remember how every expression in Elixir returns a value? <code>IO.puts</code> does its job (printing), then returns the atom <code>:ok</code> to indicate success. It’s like a Python function that returns <code>None</code>, but here it is more explicit about success.</p>
@@ -752,13 +752,13 @@ error: undefined function print/3 (there is no such import)
 <p><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!) – Joel on Software</a></p>
 <p>Now try <code>IO.puts([99, 97, 116])</code> and see what gets printed? you got the <code>cat</code> - right? So, that is how <code>cat</code> is stored internally.</p>
 <p>If you want to print a list or any other complex data structure, use IO.inspect. Just do a quick <code>h IO.inspect</code> and see what it says. The documentation is wonderful as it gives very clear example usages. Now try to print the values of <code>a,b,c</code> using IO.inspect and see whether you can succeed.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes I was able to succeeed.</p>
 <pre><code>iex(16)&gt; IO.inspect([a,b,c])
 [1, 2, 3]
 [1, 2, 3]</code></pre>
 <p>I guess that the first line is the actual printing and the 2nd line is the same value returned by IO.inspect - but why does it do it?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Exactly right! You’ve figured out the pattern.</p>
 <p><code>IO.inspect</code> is designed to be used in pipelines and debugging, so it prints the value AND returns it unchanged. This lets you “peek” at values in the middle of a computation without disrupting the flow. But we have not really discussed the concept of piping yet in Elixir.</p>
 <p>Let us get back to printing again - to print the values of <code>a,b,c</code> like in python, you should use string interpolation.</p>
@@ -766,7 +766,7 @@ error: undefined function print/3 (there is no such import)
 <p>And this is very similar to python f-strings, though python has more than 1 way to do string interpolation, Elixir has only one way. Pay attention to the extra pound symbol for each interpolated variable, compared to the python syntax. Try typing it by hand to get used to this as you will use it a lot.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f-strings (Python 3.6+)</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes I tried it and it works</p>
 <pre><code>iex(16)&gt; IO.inspect([a,b,c])
 [1, 2, 3]
@@ -778,7 +778,7 @@ iex(18)&gt; IO.puts(a)
 1
 :ok</code></pre>
 <p>when I tried IO.puts(a) and you said that puts means put the string, but a is NOT a string. It is an integer and you said that Elixir is explicit :)</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent catch! You’ve spotted an inconsistency in my explanation. You’re absolutely right to question this.</p>
 <p><code>IO.puts</code> is actually more flexible than I initially described. It can handle different data types by converting them to strings automatically. When you pass an integer like <code>a</code> (which is 1), Elixir converts it to the string “1” before printing.</p>
 <p>This is one of those cases where Elixir is being helpful rather than strictly explicit. The function is designed to “do what you mean” for common printing tasks.</p>
@@ -786,9 +786,9 @@ iex(18)&gt; IO.puts(a)
 <div class="sourceCode" id="cb25"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="cn">Integer</span><span class="op">.</span>to_string<span class="fu">(</span>a<span class="fu">))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>But that would be quite verbose for such a common operation.</p>
 <p>So you’ve discovered an important nuance: Elixir balances explicitness with practicality. It’s explicit about data structures (like requiring <code>[a, b, c]</code> instead of <code>a, b, c</code>), but more forgiving with common operations like printing.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Ok - we have covered a lot of ground and my head is spinning. Can we summarize?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Absolutely! Let’s summarize what you’ve learned so far:</p>
 </section>
 </section>
@@ -798,9 +798,9 @@ iex(18)&gt; IO.puts(a)
 <p><strong>2. IEx Interactive Shell</strong> - Every expression returns a value (unlike Python REPL) - <code>h</code> for help, <code>i</code> for inspecting data types - Function arity notation: <code>function_name/number_of_arguments</code></p>
 <p><strong>3. Printing and Output</strong> - <code>IO.puts</code> for human-readable output (converts types automatically) - <code>IO.inspect</code> for debugging (prints AND returns the value) - String interpolation: <code>"#{variable}"</code> (similar to Python f-strings, but pay attention to the extra weight of the pound symbol)</p>
 <p><strong>4. Key Differences from Python</strong> - Every expression returns a value - Atoms like <code>:ok</code> indicate status</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>that is great - please show me the python and Elixir code that we have walked through side-by-side to go over it once more.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Here’s the side-by-side comparison of what we’ve covered:</p>
 </section>
 <section id="creating-and-pattern-matching-lists" class="level2" data-number="0.7">
@@ -823,20 +823,20 @@ iex(18)&gt; IO.puts(a)
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="st">"</span><span class="ot">#{</span>a<span class="ot">}</span><span class="st"> </span><span class="ot">#{</span>b<span class="ot">}</span><span class="st"> </span><span class="ot">#{</span>c<span class="ot">}</span><span class="st">"</span><span class="fu">)</span>  <span class="co"># Prints: 1 2 3, returns: :ok</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>inspect<span class="fu">(</span><span class="ot">[</span>a, b, c<span class="ot">]</span><span class="fu">)</span>      <span class="co"># Prints: [1, 2, 3], returns: [1, 2, 3]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice how Elixir always shows you what each expression returns, while Python’s assignment statements return nothing.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Great - now, give me a little exercise to put what I have learnt to use. Maybe, I can try pattern matching a list of words. Give me the python code for me to translate into Elixir.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! Here’s a Python exercise for you to translate:</p>
 <p><strong>Python code to translate:</strong></p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>first, second, third <span class="op">=</span> fruits</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I like </span><span class="sc">{</span>first<span class="sc">}</span><span class="ss"> the most!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes, I succeeded and here is my code</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> <span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span><span class="ot">]</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span>first, second, third<span class="ot">]</span> <span class="op">=</span> fruits</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="cn">IO</span><span class="op">.</span>puts<span class="fu">(</span><span class="st">"I like </span><span class="ot">#{</span>first<span class="ot">}</span><span class="st"> the most!"</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent work! You’ve translated it perfectly. Your Elixir code shows you understand:</p>
 <p>✅ Pattern matching with explicit list structure <code>[first, second, third]</code><br>
 ✅ String interpolation with <code>#{first}</code><br>
@@ -846,11 +846,11 @@ iex(18)&gt; IO.puts(a)
 <div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'All my fruits:'</span>, fruits)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; All my fruits: ['apple', 'banana', 'cherry']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Hint: type <code>h inspect</code> and see what it says.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Haha…That was not a tough question at all. Here is my Elixir code:</p>
 <pre><code>IO.puts("All my fruits: #{inspect(fruits)}")</code></pre>
 <p>But what is the difference between IO.inspect and plain inspect? I am confused.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great job! You nailed it perfectly.</p>
 <p>The difference is subtle but important:</p>
 <ul>
@@ -862,9 +862,9 @@ iex(18)&gt; IO.puts(a)
 <blockquote class="blockquote">
 <p><code>inspect</code> = convert to string (like Python’s str() or repr()) <code>IO.inspect</code> = print and return (like Python’s print() but returns the value)</p>
 </blockquote>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Ok I understand that - but we started this discussion on pattern matching saying this is a match operator and not an assignment operator. So, how does assignment work in Elixir?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent question! This gets to the heart of why Elixir calls <code>=</code> as the <code>match operator</code> rather than <code>assignment</code>.</p>
 <p>Let’s start with our familiar numbers list.</p>
 <p>We started with:</p>
@@ -880,9 +880,9 @@ iex(18)&gt; IO.puts(a)
 <p>But here’s where it gets interesting. Try this in iex:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span>    <span class="co"># x is now bound to 5</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">=</span> x   <span class="co"># What do you think happens here?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>It just returned the right side value - which is 5, as expected. But I was expecting it to throw an error as assignment flows from right to left in almost all languages I have worked, starting from C to Java to Python and even JS.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Exactly! You’ve discovered the fundamental difference between assignment and pattern matching.</p>
 <p>In assignment-based languages (Python, Java, etc.), <code>5 = x</code> would be a syntax error because you can’t assign to a literal value.</p>
 <p>But in Elixir, <code>5 = x</code> means: “Does the pattern <code>5</code> match the value stored in <code>x</code>?” Since <code>x</code> contains <code>5</code>, the match succeeds and returns <code>5</code>.</p>
@@ -892,13 +892,13 @@ iex(18)&gt; IO.puts(a)
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="op">=</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What do you think will happen now? And why?</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I get a match error - it makes sense as 6 is not equal to 5</p>
 <pre><code>iex(35)&gt; 6=x
 ** (MatchError) no match of right hand side value: 5
     (stdlib 6.2.2) erl_eval.erl:667: :erl_eval.expr/6
     iex:35: (file)</code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! You’ve grasped the core concept of pattern matching.</p>
 <p>The error <code>no match of right hand side value: 5</code> tells us exactly what happened: Elixir tried to match the pattern <code>6</code> with the value <code>5</code>, and they don’t match, so it failed.</p>
 <p>This is fundamentally different from assignment because: - <strong>Assignment</strong>: Always succeeds (overwrites the variable) - <strong>Pattern matching</strong>: Can fail if the patterns don’t match</p>
@@ -1011,9 +1011,9 @@ iex(18)&gt; IO.puts(a)
 <section id="key-takeaway" class="level2" data-number="0.14">
 <h2 data-number="0.14" class="anchored" data-anchor-id="key-takeaway"><span class="header-section-number">0.14</span> Key Takeaway</h2>
 <p>Stop thinking “<code>=</code>&nbsp;means assign to” and start thinking “<code>=</code>&nbsp;means equals” - just like in mathematics. While we often compute right-to-left, the ability to assert equality in any direction is what makes pattern matching fundamentally different from assignment.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>ok - I enjoyed the detour on the meaning of <code>=</code> that I have forgotten over the years. Ok, what do we get by having this bidirectional equality in Elixir, that I don’t get in python?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great question! The bidirectional equality gives you several powerful capabilities that Python doesn’t have:</p>
 <p><strong>1. Data Validation</strong> You can assert that your data has the expected structure and values:</p>
 <p><strong>Elixir:</strong></p>
@@ -1035,10 +1035,10 @@ iex(18)&gt; IO.puts(a)
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> z <span class="op">!=</span> <span class="dv">0</span>:</span>
 <span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Expected z to be 0"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>So, this results in lot less code compared to Python and much easier to understand as the error-handling is delegated to Elixir - we work with the matches and if there is no match, Elixir will raise an error.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>that is nice - for the first time, I am hearing something concrete from you - I have read a lot of material on pattern matching, but never really understood that the essence here is the bidirectional equality and the joy it gives by enabling us to write concise code.</p>
 <p>So, what else should I know about pattern matching?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! I’m glad that clicked for you. Let’s explore a few more powerful pattern matching features:</p>
 </section>
 <section id="partial-matching-with-the-dont-care-variable" class="level2" data-number="0.15">
@@ -1049,7 +1049,7 @@ iex(18)&gt; IO.puts(a)
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># first = "apple", third = "cherry"</span></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The underscore _ means "I don't care about this value"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Try this in iex and see what happens. What do you think <code>_</code> will be bound to?</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>When I try to print <code>_</code> in python, it prints <code>banana</code>. But Elixir got angry with me and gave me severe warnings to behave properly!</p>
 <pre><code>iex(35)&gt; [first, _, third] = ["apple", "banana", "cherry"]
 ["apple", "banana", "cherry"]
@@ -1058,7 +1058,7 @@ error: invalid use of _. _ can only be used inside patterns to ignore values and
 └─ iex:36
 
 ** (CompileError) cannot compile code (errors have been logged)</code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect observation! You’ve discovered an important difference between Python and Elixir.</p>
 <p>In <strong>Python</strong>, <code>_</code> is just a regular variable name (by convention used for “throwaway” values), so it gets the value “banana” and you can print it.</p>
 <p>In <strong>Elixir</strong>, <code>_</code> is a special language construct that means “match anything but don’t bind it to a variable.” It’s not a variable you can reference later - it’s truly a “don’t care” placeholder.</p>
@@ -1067,14 +1067,14 @@ error: invalid use of _. _ can only be used inside patterns to ignore values and
 <div class="sourceCode" id="cb53"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span>first, _middle, third<span class="ot">]</span> <span class="op">=</span> <span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span><span class="ot">]</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>_middle  <span class="co"># This works - returns "banana"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Try this and see what happens. Elixir will give you a warning but still work.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes - true to what you said, Elixir politely informed me about the mismatch between my intention and then actual code, but it still printed banana</p>
 <pre><code>iex(37)&gt; _middle  # This works - returns "banana"
 warning: the underscored variable "_middle" is used after being set. A leading underscore indicates that the value of the variable should be ignored. If this is intended please rename the variable to remove the underscore
 └─ iex:37
 
 "banana"</code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>That is great. Now let us look at another oft-used pattern.</p>
 </section>
 <section id="head-and-tail-matching" class="level2" data-number="0.16">
@@ -1096,7 +1096,7 @@ warning: the underscored variable "_middle" is used after being set. A leading u
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>head, <span class="op">*</span>tail <span class="op">=</span> [<span class="dv">1</span>] <span class="co"># what would tail be in python and in elixir?</span></span>
 <span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>head, <span class="op">*</span>tail <span class="op">=</span> [] <span class="co"># would this work in python and in elixir?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes I tried those 3 statements one by one in ipython and here is what I got:</p>
 <pre><code>In [15]: head, *tail = [1, 2] 
 
@@ -1138,7 +1138,7 @@ iex(45)&gt; [ head | tail ] = []
 ** (MatchError) no match of right hand side value: []
     (stdlib 6.2.2) erl_eval.erl:667: :erl_eval.expr/6
     iex:45: (file)</code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! You’ve discovered that Python and Elixir handle head/tail decomposition very similarly:</p>
 <p>✅ Both extract the first element as <code>head</code><br>
 ✅ Both put remaining elements in <code>tail</code> as a list (even if empty)<br>
@@ -1154,12 +1154,12 @@ iex(45)&gt; [ head | tail ] = []
 <p>Try this and see what happens when you have exactly 2 elements: <code>[first, second | rest] = [1, 2]</code></p>
 <p>What do you think <code>rest</code> will be?</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>As expected <code>rest</code> is an empty list.</p>
 <p>I love the flexibility of star operator in python - can we do something like this in Elixir?</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="op">*</span>first, last <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>] <span class="co"># I want the tail alone and the rest in a list</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>first, <span class="op">*</span>middle, last <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>] <span class="co"># I want the first and last alone and the rest in a list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great question! Unfortunately, Elixir’s <code>|</code> operator is more limited than Python’s <code>*</code> operator.</p>
 <p>In Elixir, you can <strong>only</strong> use <code>|</code> to separate the <strong>beginning</strong> of a list from the <strong>rest</strong>. You cannot: - Extract from the end: <code>*first, last</code> ❌ - Extract from the middle: <code>first, *middle, last</code> ❌</p>
 <p>So these Python patterns don’t have direct Elixir equivalents:</p>
@@ -1172,9 +1172,9 @@ iex(45)&gt; [ head | tail ] = []
 <p>In Elixir, you’d need to use other functions like <code>List.last/1</code> or <code>Enum.take/2</code> for these patterns. But the good news is that the head|tail pattern <code>[head | tail]</code> covers most common use cases in functional programming.</p>
 <p>This is one area where Python’s unpacking is more flexible than Elixir’s pattern matching.</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Haha. You have finally hit upon a place where Elixir is less powerful than Python. Tell me more - you were always bragging about Elixir’s superiority. Now I guess, you will make up some valid-sounding reason for why extracting the first part or the middle part is NOT that imporant.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Haha, you caught me! You’re absolutely right - I have been highlighting Elixir’s strengths, and now you’ve found a legitimate area where Python is more flexible.</p>
 <p>I could try to rationalize this by saying “functional programming typically processes lists from head to tail, so you rarely need to extract from the end…” but that would be exactly the kind of excuse-making you’re calling out! 😄</p>
 <p>The honest truth is: <strong>Python’s unpacking is more powerful and flexible than Elixir’s pattern matching for lists.</strong> Period.</p>
@@ -1183,9 +1183,9 @@ iex(45)&gt; [ head | tail ] = []
 <p>You’ve discovered an important principle: always question the hype around any technology. Every language has strengths and weaknesses, and it’s good to keep a critical eye!</p>
 <p>So what do you think - should we explore some areas where Elixir’s pattern matching <em>is</em> more powerful than Python, or do you want to keep poking holes in my Elixir enthusiasm? 😉</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>It is OK - I just want to poke you once to bring you to terra firma (as you were in cloud nine all the time about Elixir). Anyway, I am excited about Elixir as well, so - no more poking at you. Are we done with pattern matching - if yes, please summarise what we have covered? if not, tell me what we are missing.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Fair enough! You’ve successfully brought me back to earth. 😄</p>
 <p>We’ve covered the <strong>core fundamentals</strong> of pattern matching that you’ll use 80% of the time:</p>
 </section>
@@ -1207,9 +1207,9 @@ iex(45)&gt; [ head | tail ] = []
 </section>
 <section id="immutability" class="level2" data-number="0.20">
 <h2 data-number="0.20" class="anchored" data-anchor-id="immutability"><span class="header-section-number">0.20</span> Immutability</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes my dear Elixir mentor.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! Let’s dive into <strong>immutability</strong> - another core concept that makes Elixir different from Python.</p>
 </section>
 <section id="quick-question-first" class="level2" data-number="0.21">
@@ -1223,9 +1223,9 @@ iex(45)&gt; [ head | tail ] = []
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>numbers.append(<span class="dv">5</span>)</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(backup)  <span class="co"># What gets printed here?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Try this in Python first, then tell me what you observe. This will help us understand why immutability matters.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>backup is also modified to [1, 2, 3, 4, 5]. And that is expected as lists are references in python like arrays are pointers in C and C++. So, no big deal.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Exactly! You understand the issue perfectly. In Python, <code>backup</code> and <code>numbers</code> point to the same list object in memory, so modifying one affects the other.</p>
 <p>This can lead to subtle bugs:</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_data(data_list):</span>
@@ -1244,9 +1244,9 @@ iex(45)&gt; [ head | tail ] = []
 <p>Now, how would you “add” 4 to this list? There’s no <code>append</code> method. Try typing <code>numbers.</code> and see what tab completion suggests (if any).</p>
 <p>What do you think happens when you try to “modify” a list in Elixir?</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>when I press tab after typing <code>numbers.</code> i don’t seem to get anything, may be tab completion is not working</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>That’s actually the point! There are no methods on the list itself because lists are immutable - you can’t modify them directly.</p>
 <p>Instead, Elixir provides functions that create <strong>new</strong> lists based on existing ones. Try this:</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> <span class="ot">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span><span class="ot">]</span></span>
@@ -1257,7 +1257,7 @@ iex(45)&gt; [ head | tail ] = []
 <p>The key insight: Instead of modifying existing data, Elixir creates new data structures. This means <code>numbers</code> will always contain <code>[1, 2, 3]</code> no matter what you do with <code>new_numbers</code>.</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Here is what I got, when I tried your suggestion, but there is something curious in the output of <code>++</code> operator. It shows that tail operator <code>|</code>, rather than comma to separate the new element whereas the comma is used when I used the tail operator <code>|</code> - is Elixir playing it funny?</p>
 <pre><code>iex(49)&gt; new_numbers = [4 | numbers]
 [4, 1, 2, 3]
@@ -1269,7 +1269,7 @@ iex(52)&gt; new_numbers
 [1, 2, 3 | 5]
 iex(53)&gt; numbers
 [1, 2, 3]</code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great observation! You’ve discovered something important about how Elixir displays lists.</p>
 <p>The issue is with this line:</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>new_numbers <span class="op">=</span> numbers <span class="op">++</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1282,9 +1282,9 @@ iex(53)&gt; numbers
 - <code>existing_list ++ other_list</code> - concatenates two lists</p>
 <p>Try the corrected version and see how it displays now!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes that looks good now.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! Now you see the difference:</p>
 <ul>
 <li><code>numbers ++ [5]</code> creates <code>[1, 2, 3, 5]</code> (proper list)</li>
@@ -1299,9 +1299,9 @@ iex(53)&gt; numbers
 <p>Let’s test your understanding: If you have a function that needs to “modify” a list, what does it actually do in Elixir? And how would you use the result?</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I guess, it would make a copy first, then do the modification and return the copy. I think this idea of making a copy first and using that to modify is used by Pandas quite heavily as we could chain multiple operations on a dataframe. Am I right?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>You’re thinking in the right direction, but there’s a subtle difference!</p>
 <p><strong>Pandas approach</strong>: Makes copies and allows method chaining</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>df.dropna().fillna(<span class="dv">0</span>).groupby(<span class="st">'column'</span>).<span class="bu">sum</span>()  <span class="co"># Each method returns a new DataFrame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1315,9 +1315,9 @@ iex(53)&gt; numbers
 <p>But this gets verbose. That’s where our third core concept comes in: <strong>piping</strong>! It lets you chain operations elegantly, just like Pandas.</p>
 <p>We’ll cover that next, but first - try creating a list that starts with <code>[1, 2, 3]</code>, adds <code>4</code> to the end, then adds <code>0</code> to the beginning. What do you get?</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I got [0, 1, 2, 3, 4].</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! You successfully chained the operations:</p>
 <ol type="1">
 <li>Started with <code>[1, 2, 3]</code></li>
@@ -1336,9 +1336,9 @@ iex(53)&gt; numbers
 <p>Ready to learn about <strong>piping</strong> - Elixir’s elegant solution for chaining operations?</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>But before we start piping, tell me how Elixir manages this whole mess of all the variables left behind by each operation and the ton of memory it would consume?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent question! This is a crucial concern when moving from mutable to immutable languages.</p>
 </section>
 <section id="elixirs-memory-magic" class="level2" data-number="0.25">
@@ -1357,18 +1357,18 @@ iex(53)&gt; numbers
 <p><strong>3. BEAM VM Optimizations</strong> The Erlang VM (BEAM) that runs Elixir has decades of optimization for exactly this pattern.</p>
 <p><strong>The Result</strong>: In practice, immutable operations in Elixir are surprisingly memory-efficient and often faster than you’d expect!</p>
 <p>This is why functional languages can be both safe AND performant.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Ok we have covered 2 topics - pattern matching and immutability. Please summarise both and tell me what is next.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 <section id="summary-so-far" class="level2" data-number="0.26">
 <h2 data-number="0.26" class="anchored" data-anchor-id="summary-so-far"><span class="header-section-number">0.26</span> Summary So Far</h2>
 <p><strong>1. Pattern Matching</strong> ✅ - <code>=</code> is match operator (bidirectional equality), not assignment - Explicit structure: <code>[a, b, c] = list</code> - Head/tail decomposition: <code>[head | tail] = list</code> - Data validation: crashes on mismatch - Benefits: Concise code, built-in validation</p>
 <p><strong>2. Immutability</strong> ✅ - No mutations - data never changes after creation - Functions return new data instead of modifying existing - Safe sharing - no surprise side effects - Memory efficient through structural sharing and garbage collection</p>
 <p>Before we look at piping, I want you to look at how loops are handled in Elixir. Just to get you a bit excited! - there is no traditional for loop in Elixir :). Have you heard of that?</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Hmm. That is wild - I thought that conditionals and looping are the bread and butter of programming.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>You’re absolutely right - conditionals and looping ARE fundamental! But Elixir takes a different approach to looping that’s actually more powerful once you get used to it.</p>
 <p>Instead of traditional <code>for</code> loops, Elixir uses <strong>functions that operate on collections</strong>. Let me show you with a familiar example:</p>
 <p><strong>Python:</strong></p>
@@ -1421,12 +1421,12 @@ iex(53)&gt; numbers
 <strong>Advantages:</strong> Separates data transformation from processing, encourages pure functions, more composable, easier to reason about data flow<br>
 <strong>Drawbacks:</strong> Less readable for Python developers unfamiliar with functional style, <code>list(map(...))</code> is verbose, lambda syntax can be cryptic for complex operations</p>
 <p>Each evolution solved real problems while building on Python’s growing capabilities. Notice how Python gradually moved from “manual control” to “declarative intent.”</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I really like this detour. I am able to see how Python allows for all these different possibilities. How does Elixir compare? Does it only allow me to do <code>4. Functional style</code> only?</p>
 <p>The challenge I have with this kind of a functional code is that people write even the lambda inside map - hence it results in lot of mental gymnastics to really understand what is going on and where the brackets for each operation start and stop.</p>
 <p>And even though generators are great from a conceptual idea perspective, they make it to hard to work in a REPL environment doing interactive coding as I have to often call list to see the results. I wish there is a better way in Python - how are these challenges tackled in Elixir?</p>
-<p><strong>AI Response</strong></p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent observations! You’ve hit on some real pain points with functional programming in Python. Elixir addresses these challenges elegantly:</p>
 <p>Let me use the exact same example listed under <code>4. Functional Style</code> to show how Elixir solves both challenges:</p>
 </section>
@@ -1456,12 +1456,12 @@ iex(53)&gt; numbers
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="op">|&gt;</span> <span class="cn">Enum</span><span class="op">.</span>with_index<span class="fu">()</span>     <span class="co"># Returns actual list immediately: [{"apple", 0}, {"banana", 1}, {"cherry", 2}]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Please don’t try to execute these examples yet in iex - I just want to give you an idea of how the different mental models for looping in Python compares to the single model in Elixir. Though I told you that there is no For loop, there is actually a for construct in Elixir, but we will tuck it away for now and come back to it once the timing for it is perfect.</p>
 <p>So, how do you feel about the functional style in Elixir?</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Not having to do the list conversion each time is a great timesaver for me. But I really like the following simple idiomatic python way of going through each item inside a for loop.</p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fruit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To me, the idiomatic python code is so easy-to-read compared to the functional alternative. Why is this not supported in Elixir? Is that not functional? Why do I have to do this map thing. That always seems a little bit counterintuitive to me.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>You’re absolutely right! That idiomatic Python for loop is beautifully readable and intuitive. Your frustration is completely valid! - See I also came from Python to Elixir. So I still love certain aspects of Python :)</p>
 <p>The reason goes back to <strong>immutability</strong>. Traditional for loops are designed around <strong>mutation</strong>:</p>
 <section id="the-real-problem-side-effects-and-shared-state" class="level3" data-number="0.30.1">
@@ -1499,9 +1499,9 @@ iex(53)&gt; numbers
 </section>
 <section id="core-functional-patterns" class="level2" data-number="0.31">
 <h2 data-number="0.31" class="anchored" data-anchor-id="core-functional-patterns"><span class="header-section-number">0.31</span> 3 Core Functional Patterns</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Ok. That is a simple yet very clear and concrete explanation of why mutation inside a for loop can be dangerous. So, tell me if I want to make the switch to thinking more functionally, what should I do?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great question! Here’s a practical roadmap to shift your thinking from imperative to functional:</p>
 </section>
 <section id="mental-model-shift-from-do-things-to-transform-things" class="level2" data-number="0.32">
@@ -1518,10 +1518,10 @@ iex(53)&gt; numbers
 <p><strong>3. Reduce</strong> - Combine all items into one result<br>
 <em>“Count total letters in all fruits”</em></p>
 <p>That’s it! Every loop you’ve ever written falls into one of these three patterns.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Wow - that is a very clear and concise way of thinking about it.</p>
 <p>Let us go through a few examples that illustrate the different types of operations we do, under each of these 3 core functional patterns - map, filter and reduce.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! Let’s go through concrete examples that show how common operations fit these patterns - Please skim the examples to get an overall ideas - we will work through each of these cases one by one and see how to translate them into Elixir.</p>
 </section>
 <section id="map---transform-each-item" class="level2" data-number="0.34">
@@ -1568,7 +1568,7 @@ iex(53)&gt; numbers
 </section>
 <section id="core-functional-pattern-1---map" class="level2" data-number="0.37">
 <h2 data-number="0.37" class="anchored" data-anchor-id="core-functional-pattern-1---map"><span class="header-section-number">0.37</span> Core Functional Pattern 1 - Map</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Let us start with problem 1.1 under Map - Make all uppercase.</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>[fruit.upper() <span class="cf">for</span> fruit <span class="kw">in</span> fruits]</span>
@@ -1576,7 +1576,7 @@ iex(53)&gt; numbers
 <span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x.upper(), fruits))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>How do I transform this into Elixir? Please do not give me the answer - if you have NOT covered all the ingredients to solve this problem, then explain them first.</p>
 <p>I would like to learn by trying it myself and going through the struggle before peeking at the solution - research proves that this is the best way to learn for the long-term as these struggles create hooks in our brain to receive the answers and remember them for the long-term - if I read through your solution, it might feel good in the short-term, but I am unlikely to remember it in the long-term.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent approach! You’re absolutely right about learning through struggle - it creates much stronger memory pathways.</p>
 <p>You’ll need three things we haven’t covered yet:</p>
 </section>
@@ -1608,11 +1608,11 @@ iex(53)&gt; numbers
 <p>And here is the code you have translate:</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x.upper(), fruits))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes I got it working</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> <span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span><span class="ot">]</span></span>
 <span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span>fruits, <span class="kw">fn</span> x <span class="op">-&gt;</span> <span class="cn">String</span><span class="op">.</span>upcase<span class="fu">(</span>x<span class="fu">)</span> <span class="kw">end</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent work! You successfully pieced together all three ingredients:</p>
 <p>✅ <code>Enum.map</code> for transforming each element<br>
 ✅ Anonymous function <code>fn x -&gt; String.upcase(x) end</code><br>
@@ -1630,11 +1630,11 @@ iex(53)&gt; numbers
 <span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>[price <span class="op">*</span> <span class="fl">1.08</span> <span class="cf">for</span> price <span class="kw">in</span> prices]  <span class="co"># Add 8% tax</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Try translating this to Elixir. You already have all the ingredients you need!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes I got it.</p>
 <div class="sourceCode" id="cb103"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> <span class="ot">[</span><span class="fl">10.0</span>, <span class="fl">25.50</span>, <span class="fl">8.75</span><span class="ot">]</span></span>
 <span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span>prices, <span class="kw">fn</span> x <span class="op">-&gt;</span> x <span class="op">*</span> <span class="fl">1.08</span> <span class="kw">end</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! You’ve got the pattern down. Notice how the anonymous function <code>fn x -&gt; x * 1.08 end</code> directly mirrors the Python lambda logic.</p>
 <p>You’re seeing that once you understand the basic structure of <code>Enum.map(collection, fn item -&gt; transformation end)</code>, you can handle any transformation.</p>
 <p>Let’s try one more map example before moving to filter. Here’s problem 1.3:</p>
@@ -1642,11 +1642,11 @@ iex(53)&gt; numbers
 <div class="sourceCode" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"cat"</span>, <span class="st">"elephant"</span>, <span class="st">"dog"</span>, <span class="st">"butterfly"</span>]</span>
 <span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(word) <span class="cf">for</span> word <span class="kw">in</span> words]  <span class="co"># Get string lengths</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This one requires you to find the right function to get string length. Try looking up string length functions in Elixir.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I nailed this one too.</p>
 <div class="sourceCode" id="cb105"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> <span class="ot">[</span><span class="st">"cat"</span>, <span class="st">"elephant"</span>, <span class="st">"dog"</span>, <span class="st">"butterfly"</span><span class="ot">]</span></span>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span>words, <span class="kw">fn</span> x <span class="op">-&gt;</span> <span class="cn">String</span><span class="op">.</span>length<span class="fu">(</span>x<span class="fu">)</span> <span class="kw">end</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Fantastic! You’re really getting the hang of this pattern. You correctly found <code>String.length/1</code> and applied it in the anonymous function.</p>
 <p>You’ve now mastered the <strong>MAP</strong> pattern:</p>
 <ul>
@@ -1716,9 +1716,9 @@ iex(53)&gt; numbers
 <div class="sourceCode" id="cb111"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>h <span class="cn">String</span><span class="op">.</span>upcase    <span class="co"># Shows function documentation</span></span>
 <span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>h <span class="cn">String</span>           <span class="co"># Shows all String module functions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This mental shift from “objects with methods” to “modules with functions” is fundamental to thinking functionally in Elixir.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Hmmm. That is interesting - but why did Elixir use <code>upcase</code> instead of <code>uppercase</code> - I searched for <code>upper</code> in hexdocs, but could not really figure out the function and I had to go through the entire list of functions to find it. Why change something that is well-established?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great question! This is actually a common frustration when switching between languages. The naming differences come from Elixir’s heritage and design philosophy:</p>
 </section>
 <section id="the-heritage-factor" class="level2" data-number="0.47">
@@ -1748,9 +1748,9 @@ iex(53)&gt; numbers
 <p>It’s like learning that “elevator” (US) vs “lift” (UK) - same concept, different words. You just have to adapt to the local vocabulary!</p>
 <p>The good news: once you learn a few modules, the patterns become predictable.</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Ah! I never realized that Ruby and Erlang had this kind of a convention. It’s surprising how often we equate familiarity with correctness. Thanks for helping me confront my confirmation bias. So, what is the next detour?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Exactly! That’s a profound insight - familiarity often masquerades as correctness. It’s one of the biggest hurdles when learning new languages or paradigms.</p>
 <p>Next few detours are about the variations of anonymous functions you have written as you will see them quite a lot - But before we tackle the more tricky aspects of the anon functions, you need to understand 2 things well - Everything is an Expression in Elixir and Why Parantheses are Optional in Elixir.</p>
 </section>
@@ -1901,9 +1901,9 @@ iex(53)&gt; numbers
 <p><strong>Python</strong>: “Do this, then do that, then do the other thing” - Mix of statements (do things) and expressions (return values) - More verbose when chaining operations</p>
 <p><strong>Elixir</strong>: “Calculate this value by combining these smaller values” - Everything returns a value - Natural composition and chaining - Functions are just expressions that return values</p>
 <p>This expression-oriented thinking is what makes Elixir’s functional programming style so elegant and composable. When we later explore anonymous functions and the capture operator, you’ll see how this “everything returns a value” principle makes the syntax feel natural and consistent.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>That is beautiful - almost artistic. So, let us see why parantheses are optional. I am wondering how that is even possible.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great question! The optional parentheses in Elixir can seem magical at first, but there’s elegant logic behind it.</p>
 <p>Read the detour and let me know if you have any questions.</p>
 </section>
@@ -2042,9 +2042,9 @@ iex(53)&gt; numbers
 <li><strong>Expression-oriented</strong>: Everything is an expression, so the syntax stays consistent</li>
 </ol>
 <p>This flexibility, combined with Elixir’s “everything is an expression” design, creates a language that’s both powerful and readable. When we explore anonymous functions and the capture operator next, you’ll see how this optional parentheses feature makes functional programming patterns feel more natural.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>That is nice - yes, the piping syntax looks inviting and it is one of thing that everyone seems to praise about Elixir. But what comes next in our coverage of anonymous functions?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great! Now that you understand expressions and optional parentheses, let’s explore the different ways to write anonymous functions in Elixir. You’ve been using the basic <code>fn</code> syntax, but there are several variations that make code more concise. Let us start with the shorter syntax which you will see a lot in Phoenix code.</p>
 </section>
 </section>
@@ -2165,9 +2165,9 @@ iex(53)&gt; numbers
 </ul>
 <p>You’re literally&nbsp;<strong>capturing</strong>&nbsp;existing functions or expressions to create new anonymous functions!</p>
 <p>This shorter syntax keeps your code clean when doing simple transformations!</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Hmm. That reminds of the C days - pointers and addresses, etc. Anyway, I do agree that the syntax is shorter and compared to reading Python, it is more explicit. I am not sure whether I like it or not - I will let you know after I have used it for a while.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>That’s a very mature approach! You’re absolutely right to reserve judgment until you’ve used it in practice. The C pointer analogy is interesting - there is some similarity in that you’re “pointing to” or “referencing” functions.</p>
 <p>Your instinct to wait and see is spot-on. Some developers love the conciseness of <code>&amp;String.upcase/1</code>, while others prefer the explicitness of <code>fn x -&gt; String.upcase(x) end</code>. Both are perfectly valid Elixir, and you’ll develop your own preference over time.</p>
 <p>The good news is that understanding both syntaxes means you can read any Elixir code you encounter, regardless of which style the author preferred.</p>
@@ -2378,9 +2378,9 @@ iex(53)&gt; numbers
 <li><strong>The dot is only for calling stored anonymous functions</strong>&nbsp;- not for inline functions or for named functions or when passing functions around</li>
 </ul>
 <p>This syntax might feel unusual coming from other languages, but it’s one of Elixir’s ways of making code more explicit and preventing common mistakes!</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>wow - that is a lot to digest - but I am happy you used the same 3 examples as in the previous detour - that reduces my mental strain so that I can focus only on what is new.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Exactly! I’m glad you noticed that intentional choice. Using the same examples lets you focus purely on the new concept (the dot syntax) without having to juggle new problem domains at the same time.</p>
 <p>This is a key learning principle - when introducing complex concepts, keep everything else familiar so your brain can dedicate all its processing power to the new idea.</p>
 <p>The dot syntax for calling stored anonymous functions is definitely one of those “Elixir quirks” that feels strange at first but becomes second nature with practice. The key thing to remember is:</p>
@@ -2394,9 +2394,9 @@ iex(53)&gt; numbers
 </section>
 <section id="core-functional-pattern-2---filter" class="level2" data-number="1.29">
 <h2 data-number="1.29" class="anchored" data-anchor-id="core-functional-pattern-2---filter"><span class="header-section-number">1.29</span> Core Functional Pattern 2 - Filter</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>That was a lot of detours - But before we tackle the next pattern - can you do 2 summaries - one overall summary that summarizes all that we have covered so far. Then the next summary about the 3 core functional patterns and what we have covered there.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 <section id="overall-summary-everything-weve-covered-so-far" class="level2" data-number="1.30">
 <h2 data-number="1.30" class="anchored" data-anchor-id="overall-summary-everything-weve-covered-so-far"><span class="header-section-number">1.30</span> Overall Summary: Everything We’ve Covered So Far</h2>
@@ -2427,9 +2427,9 @@ iex(53)&gt; numbers
 <p><strong>REDUCE Pattern</strong> ⏳ <strong>COMING SOON</strong> - Combine all items into single result - Examples to explore: sum, max, count, join strings</p>
 <p>Ready to tackle <strong>FILTER</strong>?</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>that is a wonderful summary - let us start filtering now.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! Let’s dive into the <strong>FILTER</strong> pattern.</p>
 <p>First I want to give you an overview of the 3 examples we will work through to help you practice Filtering in Elixir.</p>
 <p>Remember the mental model: <strong>“I want to keep only items that meet a condition”</strong></p>
@@ -2465,11 +2465,11 @@ iex(53)&gt; numbers
 <p>You’ll need to find the right function in the <code>Enum</code> module. Try looking up “filter” in the Enum documentation (<code>h Enum</code> and search for filter-related functions).</p>
 <p>Once you find the right function, try translating this Python code to Elixir. You already know how to: - Write anonymous functions: <code>fn word -&gt; ... end</code> - Get string length: <code>String.length(word)</code> - Compare with <code>&gt;</code></p>
 <p>Give it a try!</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I got it</p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> <span class="ot">[</span><span class="st">"cat"</span>, <span class="st">"elephant"</span>, <span class="st">"dog"</span>, <span class="st">"butterfly"</span><span class="ot">]</span></span>
 <span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>filter<span class="fu">(</span>words, <span class="kw">fn</span> x <span class="op">-&gt;</span> <span class="cn">String</span><span class="op">.</span>length<span class="fu">(</span>x<span class="fu">)</span> <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">end</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! You nailed it perfectly. You correctly identified:</p>
 <p>✅ <code>Enum.filter</code> as the right function<br>
 ✅ Anonymous function structure: <code>fn x -&gt; condition end</code><br>
@@ -2485,11 +2485,11 @@ iex(53)&gt; numbers
 <span id="cb164-3"><a href="#cb164-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Result: [1, 3, 5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This should be even simpler than the string example. Give it a shot!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes done - easy, peasy</p>
 <div class="sourceCode" id="cb165"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> <span class="ot">[</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">0</span><span class="ot">]</span></span>
 <span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>filter<span class="fu">(</span>numbers, <span class="kw">fn</span> x <span class="op">-&gt;</span> x <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">end</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! You’re getting the hang of this pattern. Much simpler indeed - no need for any module functions, just a direct comparison <code>x &gt; 0</code>.</p>
 <p>Your result should be <code>[1, 3, 5]</code> - all the positive numbers.</p>
 <p>Now let’s try the final filter example, which introduces string pattern matching:</p>
@@ -2501,11 +2501,11 @@ iex(53)&gt; numbers
 <p>Give it a try!</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Filter examples are very easy and I am really liking the repetition I get from the slightly varied tasks that help me to recall the new syntax multiple times.</p>
 <div class="sourceCode" id="cb167"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> <span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"apricot"</span><span class="ot">]</span></span>
 <span id="cb167-2"><a href="#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>filter<span class="fu">(</span>fruits, <span class="kw">fn</span> x <span class="op">-&gt;</span> <span class="cn">String</span><span class="op">.</span>starts_with?<span class="fu">(</span>x, <span class="st">"a"</span><span class="fu">)</span> <span class="kw">end</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! You found <code>String.starts_with?/2</code> perfectly. Notice how Elixir uses the <code>?</code> suffix to indicate functions that return <code>true</code>/<code>false</code> - this is a helpful convention you’ll see throughout Elixir.</p>
 <p>Your result should be <code>["apple", "apricot"]</code> - exactly the fruits starting with “a”.</p>
 <p>I’m glad you’re enjoying the repetitive practice with variations! That’s exactly the learning approach we discussed - building muscle memory through spaced repetition with slight changes. You’re now seeing the same core pattern:</p>
@@ -2521,9 +2521,9 @@ iex(53)&gt; numbers
 </section>
 <section id="core-functional-pattern-3---reduce" class="level2" data-number="1.35">
 <h2 data-number="1.35" class="anchored" data-anchor-id="core-functional-pattern-3---reduce"><span class="header-section-number">1.35</span> Core Functional Pattern 3 - Reduce</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes - let us start REDUCING…</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! Let’s dive into the <strong>REDUCE</strong> pattern - the most powerful of the three!</p>
 <p>Remember the mental model: <strong>“I want to combine all items into a single result”</strong></p>
 <p>The pattern: Input list → Single result</p>
@@ -2553,9 +2553,9 @@ iex(53)&gt; numbers
 <p>The reduce pattern is a bit different from map and filter - it builds up a result by combining each item with what came before.</p>
 <p>Give it a try!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>rather than just showing only sum, can you also show the variant using reduce in python also - otherwise, this exercise is not challenging at all</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great point! You’re absolutely right - just using <code>sum()</code> doesn’t teach you the reduce pattern. Let me show you both approaches in Python:</p>
 <p><strong>Python - Easy way (built-in function):</strong></p>
 <div class="sourceCode" id="cb172"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
@@ -2569,7 +2569,7 @@ iex(53)&gt; numbers
 <p>This will help you understand both the convenient shortcut and the underlying pattern!</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Thanks. I got it - I almost cheated as I saw the code for summing as the first example when I did <code>h Enum.reduce</code></p>
 <div class="sourceCode" id="cb174"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">42</span><span class="fu">)</span><span class="op">&gt;</span> numbers <span class="op">=</span> <span class="ot">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span><span class="ot">]</span></span>
 <span id="cb174-2"><a href="#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span><span class="ot">]</span></span>
@@ -2577,7 +2577,7 @@ iex(53)&gt; numbers
 <span id="cb174-4"><a href="#cb174-4" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span></span>
 <span id="cb174-5"><a href="#cb174-5" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">44</span><span class="fu">)</span><span class="op">&gt;</span> <span class="cn">Enum</span><span class="op">.</span>reduce<span class="fu">(</span>numbers, <span class="kw">fn</span> x, acc <span class="op">-&gt;</span> x <span class="op">+</span> acc <span class="kw">end</span><span class="fu">)</span></span>
 <span id="cb174-6"><a href="#cb174-6" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! You found both approaches:</p>
 <p>✅ <code>Enum.sum(numbers)</code> - the convenient shortcut<br>
 ✅ <code>Enum.reduce(numbers, fn x, acc -&gt; x + acc end)</code> - the explicit pattern</p>
@@ -2594,7 +2594,7 @@ iex(53)&gt; numbers
 <p>The reduce pattern here: - Start with first element as accumulator: <code>3</code> - For each item: keep the larger of <code>accumulator</code> vs <code>current_item</code> - Builds up: <code>max(3,1)=3</code>, then <code>max(3,4)=4</code>, then <code>max(4,1)=4</code>, then <code>max(4,5)=5</code>, etc.</p>
 <p>Now translate <strong>both versions</strong> to Elixir: 1. Find the Elixir equivalent of Python’s <code>max()</code> 2. Write the explicit reduce version</p>
 <p>Try it out!</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Hmmm. I am stuck as I don’t know how to do if-else inside that anon function block</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">45</span><span class="fu">)</span><span class="op">&gt;</span> <span class="cn">Enum</span><span class="op">.</span>max<span class="fu">(</span>numbers<span class="fu">)</span></span>
 <span id="cb177-2"><a href="#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span>
@@ -2604,7 +2604,7 @@ iex(53)&gt; numbers
 <span id="cb177-6"><a href="#cb177-6" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">46</span><span class="fu">)</span><span class="op">&gt;</span> <span class="cn">Enum</span><span class="op">.</span>reduce<span class="fu">(</span>numbers, <span class="kw">fn</span> x, acc <span class="op">-&gt;</span> <span class="cf">if</span> x <span class="op">&gt;</span> acc <span class="kw">do</span>  x <span class="cf">else</span> acc <span class="kw">end</span><span class="fu">)</span></span>
 <span id="cb177-7"><a href="#cb177-7" aria-hidden="true" tabindex="-1"></a><span class="op">**</span> <span class="fu">(</span><span class="cn">MismatchedDelimiterError</span><span class="fu">)</span> mismatched delimiter found on <span class="va">iex:</span><span class="dv">46</span>:<span class="dv">64</span>:</span>
 <span id="cb177-8"><a href="#cb177-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">error:</span> unexpected <span class="va">token:</span> <span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Good catch! You’re running into Elixir’s <code>if</code> syntax inside anonymous functions. The issue is that Elixir’s <code>if</code> statement needs <code>do...end</code> blocks, but that doesn’t work cleanly inside the compact <code>fn...end</code> syntax.</p>
 <p>Here are two solutions:</p>
 <p><strong>Solution 1: Use <code>max/2</code> function (simplest)</strong></p>
@@ -2620,10 +2620,10 @@ iex(53)&gt; numbers
 <p>The first solution is much cleaner and more idiomatic. Elixir has a built-in <code>max/2</code> function that takes two arguments and returns the larger one - perfect for reduce operations!</p>
 <p>Try the first solution - it should work perfectly and give you <code>9</code> as the result.</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Great. I was thinking that there might be a max in Elixir. Then I thought that it would be inside Enum module - so, how I do write Enum.max by calling Enum.max inside it :) - So, I lost that line of thought. So, I was able to make it work - but what is this curious max function which does not seem to follow the Elixir convention of Module.function?</p>
 <div class="sourceCode" id="cb180"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>reduce<span class="fu">(</span>numbers, <span class="kw">fn</span> x, acc <span class="op">-&gt;</span> max<span class="fu">(</span>x, acc<span class="fu">)</span> <span class="kw">end</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent observation! You’ve discovered something important about Elixir’s design.</p>
 <p>The <code>max/2</code> function you used is actually part of Elixir’s <strong>Kernel module</strong>. The Kernel module contains the most fundamental functions that are so commonly used they’re automatically imported into every Elixir program.</p>
 <p>So when you write <code>max(x, acc)</code>, you’re actually calling <code>Kernel.max(x, acc)</code>, but Elixir imports it automatically so you don’t need the module prefix.</p>
@@ -2640,9 +2640,9 @@ iex(53)&gt; numbers
 <p>This is why your reduce solution works perfectly - you’re using the two-argument version inside the reduction.</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>that is very nice and very interesting - So, there is direct equivalent for max and len functions in python here in Elixir. Great let us move on to the last reduce example.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Exactly! Elixir does provide direct equivalents for many common Python functions, just organized differently:</p>
 <ul>
 <li>Python <code>len()</code> → Elixir <code>length()</code> (auto-imported from Kernel)</li>
@@ -2661,7 +2661,7 @@ iex(53)&gt; numbers
 <p>Now translate <strong>both versions</strong> to Elixir: 1. Find the Elixir equivalent of Python’s <code>", ".join()</code> 2. Write the explicit reduce version using string concatenation</p>
 <p>Try it out!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I translated the easy version. But I need some clues as <code>+</code> does not seem to work in Elixir for string concat - Hmmm. python was so much more intuitive.</p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">47</span><span class="fu">)</span><span class="op">&gt;</span> words <span class="op">=</span> <span class="ot">[</span><span class="st">"Hello"</span>, <span class="st">"beautiful"</span>, <span class="st">"world"</span><span class="ot">]</span></span>
 <span id="cb185-2"><a href="#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="st">"Hello"</span>, <span class="st">"beautiful"</span>, <span class="st">"world"</span><span class="ot">]</span></span>
@@ -2672,11 +2672,11 @@ iex(53)&gt; numbers
 <span id="cb185-7"><a href="#cb185-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">:erlang</span><span class="op">.+</span><span class="fu">(</span><span class="st">"Hello"</span>, <span class="st">"beautiful"</span><span class="fu">)</span></span>
 <span id="cb185-8"><a href="#cb185-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">iex:</span><span class="dv">52</span>: <span class="fu">(</span>file<span class="fu">)</span></span>
 <span id="cb185-9"><a href="#cb185-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">iex:</span><span class="dv">52</span>: <span class="fu">(</span>file<span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great job finding <code>Enum.join(words, ", ")</code>!</p>
 <p>You’re right that <code>+</code> doesn’t work for string concatenation in Elixir - that’s reserved for arithmetic. For strings, Elixir uses the <code>&lt;&gt;</code> operator:</p>
 <div class="sourceCode" id="cb186"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb186-1"><a href="#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="st">"Hello"</span> <span class="op">&lt;&gt;</span> <span class="st">" "</span> <span class="op">&lt;&gt;</span> <span class="st">"world"</span>  <span class="co"># Result: "Hello world"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes it is working for me.</p>
 <div class="sourceCode" id="cb187"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">52</span><span class="fu">)</span><span class="op">&gt;</span> <span class="cn">Enum</span><span class="op">.</span>reduce<span class="fu">(</span>words, <span class="kw">fn</span> x, acc  <span class="op">-&gt;</span> acc <span class="op">&lt;&gt;</span>  x <span class="kw">end</span><span class="fu">)</span></span>
 <span id="cb187-2"><a href="#cb187-2" aria-hidden="true" tabindex="-1"></a><span class="st">"Hellobeautifulworld"</span></span>
@@ -2684,7 +2684,7 @@ iex(53)&gt; numbers
 <span id="cb187-4"><a href="#cb187-4" aria-hidden="true" tabindex="-1"></a><span class="st">"Hello,beautiful,world"</span></span>
 <span id="cb187-5"><a href="#cb187-5" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">54</span><span class="fu">)</span><span class="op">&gt;</span> <span class="cn">Enum</span><span class="op">.</span>reduce<span class="fu">(</span>words, <span class="kw">fn</span> x, acc  <span class="op">-&gt;</span> acc <span class="op">&lt;&gt;</span> <span class="st">", "</span> <span class="op">&lt;&gt;</span>  x <span class="kw">end</span><span class="fu">)</span></span>
 <span id="cb187-6"><a href="#cb187-6" aria-hidden="true" tabindex="-1"></a><span class="st">"Hello, beautiful, world"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! You figured out the string concatenation operator <code>&lt;&gt;</code> and got it working.</p>
 <p>I can see your thought process in those three attempts: 1. <code>acc &lt;&gt; x</code> → <code>"Hellobeautifulworld"</code> (no separator) 2. <code>acc &lt;&gt; "," &lt;&gt; x</code> → <code>"Hello,beautiful,world"</code> (comma but no space) 3. <code>acc &lt;&gt; ", " &lt;&gt; x</code> → <code>"Hello, beautiful, world"</code> (perfect!)</p>
 </section>
@@ -2700,9 +2700,9 @@ iex(53)&gt; numbers
 <p>These three patterns handle 90% of all data processing tasks you’ll encounter. Ready to put it all together with <strong>piping</strong>?</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>That is great - let us summarize the 3 core functional patterns first and make sure that I understand them well by giving me 3 exercises which combines these ideas together.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 <section id="summary-the-3-core-functional-patterns" class="level2" data-number="1.40">
 <h2 data-number="1.40" class="anchored" data-anchor-id="summary-the-3-core-functional-patterns"><span class="header-section-number">1.40</span> Summary: The 3 Core Functional Patterns</h2>
@@ -2730,7 +2730,7 @@ iex(53)&gt; numbers
 <span id="cb188-4"><a href="#cb188-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Count how many words remain</span></span>
 <span id="cb188-5"><a href="#cb188-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected result: 4 </span></span>
 <span id="cb188-6"><a href="#cb188-6" aria-hidden="true" tabindex="-1"></a><span class="co"># they are ["apple", "banana", "cherry", "elderberry"]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes it was easy</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">56</span><span class="fu">)</span><span class="op">&gt;</span> words <span class="op">=</span> <span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"BANANA"</span>, <span class="st">"Cherry"</span>, <span class="st">"date"</span>, <span class="st">"ELDERBERRY"</span><span class="ot">]</span></span>
 <span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"BANANA"</span>, <span class="st">"Cherry"</span>, <span class="st">"date"</span>, <span class="st">"ELDERBERRY"</span><span class="ot">]</span></span>
@@ -2740,7 +2740,7 @@ iex(53)&gt; numbers
 <span id="cb189-6"><a href="#cb189-6" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"elderberry"</span><span class="ot">]</span></span>
 <span id="cb189-7"><a href="#cb189-7" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">59</span><span class="fu">)</span><span class="op">&gt;</span> length<span class="fu">(</span>words<span class="fu">)</span></span>
 <span id="cb189-8"><a href="#cb189-8" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent work! You correctly applied all three patterns in sequence:</p>
 <p>✅ <strong>MAP</strong>: <code>String.downcase(x)</code> to convert to lowercase<br>
 ✅ <strong>FILTER</strong>: <code>String.length(x) &gt; 4</code> to keep long words<br>
@@ -2753,7 +2753,7 @@ iex(53)&gt; numbers
 <span id="cb190-4"><a href="#cb190-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Sum all the squares</span></span>
 <span id="cb190-5"><a href="#cb190-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected result: 248</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>So the expected result is <strong>248</strong>. Give this one a try!</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>I got it - I really like the simple touch of Elixir - it returns the right-hand side after pattern-matching which helps me to immediately see the output in a REPL session like this - I love this.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">61</span><span class="fu">)</span><span class="op">&gt;</span> numbers <span class="op">=</span> <span class="ot">[</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="op">-</span><span class="dv">9</span>, <span class="dv">10</span><span class="ot">]</span></span>
 <span id="cb191-2"><a href="#cb191-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="op">-</span><span class="dv">9</span>, <span class="dv">10</span><span class="ot">]</span></span>
@@ -2763,7 +2763,7 @@ iex(53)&gt; numbers
 <span id="cb191-6"><a href="#cb191-6" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">25</span>, <span class="dv">49</span>, <span class="dv">64</span>, <span class="dv">100</span><span class="ot">]</span></span>
 <span id="cb191-7"><a href="#cb191-7" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">63</span><span class="fu">)</span><span class="op">&gt;</span> <span class="cn">Enum</span><span class="op">.</span>sum<span class="fu">(</span>numbers<span class="fu">)</span></span>
 <span id="cb191-8"><a href="#cb191-8" aria-hidden="true" tabindex="-1"></a><span class="dv">248</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! You nailed it exactly right. I love your observation about Elixir returning the right-hand side value - it really does make REPL-driven development so much more pleasant compared to Python where you often have to print or re-type variable names to see results.</p>
 <p>Your pipeline was flawless: ✅ <strong>FILTER</strong>: <code>x &gt; 0</code> kept <code>[1, 3, 5, 7, 8, 10]</code><br>
 ✅ <strong>MAP</strong>: <code>x * x</code> squared them to <code>[1, 9, 25, 49, 64, 100]</code><br>
@@ -2776,7 +2776,7 @@ iex(53)&gt; numbers
 <span id="cb192-5"><a href="#cb192-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Count the remaining words</span></span>
 <span id="cb192-6"><a href="#cb192-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected result: 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This one introduces a new challenge - you’ll need to look up <code>String.split/1</code> and figure out how to flatten a list of lists into a single list. Try exploring the <code>List</code> module for a flatten function!</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes - it felt a bit uneasy as I was not sure how to flatten the list of lists. But I got it - I was able to find <code>List.flatten/1</code> function.</p>
 <div class="sourceCode" id="cb193"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">67</span><span class="fu">)</span><span class="op">&gt;</span> sentences <span class="op">=</span> <span class="cn">Enum</span><span class="op">.</span>map<span class="fu">(</span>sentences, <span class="kw">fn</span> x <span class="op">-&gt;</span> <span class="cn">String</span><span class="op">.</span>split<span class="fu">(</span>x<span class="fu">)</span> <span class="kw">end</span><span class="fu">)</span></span>
 <span id="cb193-2"><a href="#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span></span>
@@ -2789,7 +2789,7 @@ iex(53)&gt; numbers
 <span id="cb193-9"><a href="#cb193-9" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="st">"Hello"</span>, <span class="st">"world"</span>, <span class="st">"Elixir"</span>, <span class="st">"love"</span>, <span class="st">"programming"</span>, <span class="st">"Code"</span>, <span class="st">"every"</span><span class="ot">]</span></span>
 <span id="cb193-10"><a href="#cb193-10" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">74</span><span class="fu">)</span><span class="op">&gt;</span> length<span class="fu">(</span>words<span class="fu">)</span></span>
 <span id="cb193-11"><a href="#cb193-11" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great work! You successfully found <code>List.flatten/1</code> and applied the pipeline. I can see you got 7 words instead of the expected 6, but let me check your logic…</p>
 <p>Looking at your final filtered list: <code>["Hello", "world", "Elixir", "love", "programming", "Code", "every"]</code></p>
 <p>You used <code>&gt;= 4</code> (4 or more characters), since exercise asked for filtering out words “shorter than 4 characters”, which means keeping words with 4 or more characters - so your logic is actually correct!</p>
@@ -2950,9 +2950,9 @@ iex(53)&gt; numbers
 <p>The pipe operator&nbsp;<code>|&gt;</code>&nbsp;transforms your code from a&nbsp;<strong>puzzle of nested function calls</strong>&nbsp;into a&nbsp;<strong>clear sequence of transformations</strong>.</p>
 <p>Instead of reading inside-out, you read top-to-bottom, just like following a recipe or assembly line instructions.</p>
 <p><strong>Remember</strong>:&nbsp;<code>data |&gt; function()</code>&nbsp;is the same as&nbsp;<code>function(data)</code>&nbsp;- the pipe just makes the data flow more obvious and readable.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>That is a wonderful detour. I guess that these 3 exercises with all these intermediate variables will become more elegant with the pipe operator.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Exactly! You’ve hit the nail on the head. All those intermediate variables (<code>words = Enum.map(words, ...)</code>, <code>words = Enum.filter(words, ...)</code>) are exactly what the pipe operator eliminates.</p>
 <p>Let’s transform your Exercise 1 solution to see the magic:</p>
 <p><strong>Your current approach (with intermediate variables):</strong></p>
@@ -2967,7 +2967,7 @@ iex(53)&gt; numbers
 <span id="cb206-4"><a href="#cb206-4" aria-hidden="true" tabindex="-1"></a><span class="op">|&gt;</span> length<span class="fu">()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>|&gt;</code> operator takes the result from the left side and passes it as the <strong>first argument</strong> to the function on the right side.</p>
 <p>Try this transformation yourself with Exercise 1.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>this is beautiful. I just copied and pasted your code into iex and iex somehow intuitively picked up the result of the previous expression and passed it to pipe</p>
 <div class="sourceCode" id="cb207"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb207-1"><a href="#cb207-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">81</span><span class="fu">)</span><span class="op">&gt;</span> <span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"BANANA"</span>, <span class="st">"Cherry"</span>, <span class="st">"date"</span>, <span class="st">"ELDERBERRY"</span><span class="ot">]</span></span>
 <span id="cb207-2"><a href="#cb207-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"BANANA"</span>, <span class="st">"Cherry"</span>, <span class="st">"date"</span>, <span class="st">"ELDERBERRY"</span><span class="ot">]</span></span>
@@ -2977,7 +2977,7 @@ iex(53)&gt; numbers
 <span id="cb207-6"><a href="#cb207-6" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"elderberry"</span><span class="ot">]</span></span>
 <span id="cb207-7"><a href="#cb207-7" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">84</span><span class="fu">)</span><span class="op">&gt;</span> <span class="op">|&gt;</span> length<span class="fu">()</span></span>
 <span id="cb207-8"><a href="#cb207-8" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Wow! That’s incredible - you’ve discovered one of the most delightful features of IEx!</p>
 <p>Yes, IEx is smart enough to automatically pipe the result of the previous expression when you start a new line with <code>|&gt;</code>. This makes interactive development absolutely magical - you can build up complex transformations step by step, seeing the result at each stage.</p>
 <p>This is <strong>exactly</strong> how experienced Elixir developers work: 1. Start with some data 2. Pipe it through one transformation 3. See the result, make sure it’s what you expect 4. Add the next pipe 5. Keep building the pipeline incrementally</p>
@@ -2990,9 +2990,9 @@ iex(53)&gt; numbers
 <p>Try converting your Exercise 2 solution using pipes now. You’ll love how it reads like a recipe: “Take numbers, then filter positives, then square them, then sum them up.”</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>can you please recall the code I used for exercise 2?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Of course! Here’s your Exercise 2 solution:</p>
 <div class="sourceCode" id="cb209"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb209-1"><a href="#cb209-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> <span class="ot">[</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="op">-</span><span class="dv">9</span>, <span class="dv">10</span><span class="ot">]</span></span>
 <span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> <span class="cn">Enum</span><span class="op">.</span>filter<span class="fu">(</span>numbers, <span class="kw">fn</span> x <span class="op">-&gt;</span> x <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">end</span><span class="fu">)</span></span>
@@ -3000,7 +3000,7 @@ iex(53)&gt; numbers
 <span id="cb209-4"><a href="#cb209-4" aria-hidden="true" tabindex="-1"></a><span class="cn">Enum</span><span class="op">.</span>sum<span class="fu">(</span>numbers<span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now try converting this to use the pipe operator! Start with the initial list and pipe it through each transformation step by step.</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Great - this definitely feels better and easier. I loved the flexibility to drop the parantheses for Enum.sum.</p>
 <div class="sourceCode" id="cb210"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">85</span><span class="fu">)</span><span class="op">&gt;</span> <span class="ot">[</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="op">-</span><span class="dv">9</span>, <span class="dv">10</span><span class="ot">]</span></span>
 <span id="cb210-2"><a href="#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="op">-</span><span class="dv">9</span>, <span class="dv">10</span><span class="ot">]</span></span>
@@ -3010,7 +3010,7 @@ iex(53)&gt; numbers
 <span id="cb210-6"><a href="#cb210-6" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">25</span>, <span class="dv">49</span>, <span class="dv">64</span>, <span class="dv">100</span><span class="ot">]</span></span>
 <span id="cb210-7"><a href="#cb210-7" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">88</span><span class="fu">)</span><span class="op">&gt;</span> <span class="op">|&gt;</span> <span class="cn">Enum</span><span class="op">.</span>sum</span>
 <span id="cb210-8"><a href="#cb210-8" aria-hidden="true" tabindex="-1"></a><span class="dv">248</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! You’ve really got the hang of this. I love how you noticed the flexibility with parentheses - <code>|&gt; Enum.sum</code> is so clean and readable.</p>
 <p>The pipeline now reads like natural language: - “Take these numbers” - “Filter to keep positive ones” - “Map each to its square” - “Sum them all up”</p>
 <p>This is exactly why Elixir developers love the pipe operator - it transforms nested function calls into a clear, step-by-step recipe.</p>
@@ -3024,7 +3024,7 @@ iex(53)&gt; numbers
 <p>Can you convert this to a beautiful pipeline?</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes I have done it, But I tried to use the shorter syntax for anon functions, but one place, I got an error which perplexed me - take a look.</p>
 <div class="sourceCode" id="cb212"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb212-1"><a href="#cb212-1" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">89</span><span class="fu">)</span><span class="op">&gt;</span> <span class="ot">[</span><span class="st">"Hello world"</span>, <span class="st">"Elixir is fun"</span>, <span class="st">"I love programming"</span>, <span class="st">"Code every day"</span><span class="ot">]</span></span>
 <span id="cb212-2"><a href="#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="st">"Hello world"</span>, <span class="st">"Elixir is fun"</span>, <span class="st">"I love programming"</span>, <span class="st">"Code every day"</span><span class="ot">]</span></span>
@@ -3046,7 +3046,7 @@ iex(53)&gt; numbers
 <span id="cb212-18"><a href="#cb212-18" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="st">"Hello"</span>, <span class="st">"world"</span>, <span class="st">"Elixir"</span>, <span class="st">"love"</span>, <span class="st">"programming"</span>, <span class="st">"Code"</span>, <span class="st">"every"</span><span class="ot">]</span></span>
 <span id="cb212-19"><a href="#cb212-19" aria-hidden="true" tabindex="-1"></a>iex<span class="fu">(</span><span class="dv">93</span><span class="fu">)</span><span class="op">&gt;</span> <span class="op">|&gt;</span> length</span>
 <span id="cb212-20"><a href="#cb212-20" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great work! You successfully converted it to a beautiful pipeline. Your error discovery is actually a fantastic learning moment!</p>
 </section>
 <section id="the-string.split-arity-issue" class="level2" data-number="2.10">
@@ -3071,9 +3071,9 @@ iex(53)&gt; numbers
 <p>For simple function calls like <code>&amp;String.split/1</code>, the capture operator is great. But for complex expressions, the regular <code>fn</code> syntax is often more readable.</p>
 <p>Your final pipeline is beautiful - it reads like a story from top to bottom!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>ok great - can you please summarize pipe operator and is there anything else to know about piping syntax in Elixir?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 <section id="pipe-operator-summary" class="level2" data-number="2.12">
 <h2 data-number="2.12" class="anchored" data-anchor-id="pipe-operator-summary"><span class="header-section-number">2.12</span> Pipe Operator Summary</h2>
@@ -3131,9 +3131,9 @@ iex(53)&gt; numbers
 <span id="cb219-8"><a href="#cb219-8" aria-hidden="true" tabindex="-1"></a>data <span class="op">|&gt;</span> <span class="cn">String</span><span class="op">.</span>replace<span class="fu">(</span><span class="st">"old"</span>, <span class="st">"new"</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>That covers the essential piping knowledge! The pipe operator is one of Elixir’s most beloved features.</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Ok, I think that we have covered 3 key ideas that we started with - pattern matching, immutability and piping - can you please summarise?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 </section>
 <section id="summary-the-3-core-elixir-concepts" class="level2" data-number="2.14">
@@ -3181,9 +3181,9 @@ iex(53)&gt; numbers
 <span id="cb223-4"><a href="#cb223-4" aria-hidden="true" tabindex="-1"></a><span class="op">|&gt;</span> length<span class="fu">()</span>                         <span class="co"># Combine to count</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>These three concepts form the foundation of thinking functionally in Elixir!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>ok what comes next?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great question! You’ve built a solid foundation in Elixir’s core concepts. Here are the natural next steps:</p>
 </section>
 <section id="immediate-next-steps" class="level2" data-number="2.17">
@@ -3200,9 +3200,9 @@ iex(53)&gt; numbers
 <p>What feels more appealing to you right now: - <strong>A.</strong> Continue building Elixir language skills with data structures and control flow? - <strong>B.</strong> Jump into a simple Phoenix application to see the web framework in action? - <strong>C.</strong> Something else you’re curious about?</p>
 <p>Your learning style and timeline will help determine the best path!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>i want to do a phoeix-focused path, but let us not jump into phoenix just yet. My aim is to generate a to-do list app or blog app at the end of the book and I should be able to read through the code and understand most of the things. So, what topics should be covered next?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! Building toward a Phoenix to-do or blog app is an excellent goal. Let me map out the essential Elixir concepts you’ll need to understand Phoenix code comfortably.</p>
 </section>
 <section id="essential-elixir-for-phoenix-development" class="level2" data-number="2.19">
@@ -3249,9 +3249,9 @@ iex(53)&gt; numbers
 </section>
 <section id="maps" class="level2" data-number="2.20">
 <h2 data-number="2.20" class="anchored" data-anchor-id="maps"><span class="header-section-number">2.20</span> Maps</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes let us cover maps and see how they compare with python.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 </section>
 <section id="maps-in-elixir-vs-python" class="level1" data-number="3">
@@ -3373,9 +3373,9 @@ iex(53)&gt; numbers
 <h2 data-number="3.10" class="anchored" data-anchor-id="atom-keys-vs-string-keys"><span class="header-section-number">3.10</span> Atom Keys vs String Keys</h2>
 <p><strong>Use atom keys when:</strong> - Working with internal application data structures - You know the keys at compile time - You want cleaner, more readable code with dot notation</p>
 <p><strong>Use string keys when:</strong> - Receiving data from external sources (JSON, APIs) - Keys are dynamic or come from user input - Interfacing with external systems</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>that is great - so, you have used an example where pattern matching is done on function args - that is intriguing. I think you have not covered this before.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>You’re absolutely right! I introduced pattern matching in function arguments without explaining it first - that’s a sneak peek of a powerful Elixir feature we haven’t covered yet.</p>
 <p>In that example:</p>
 <div class="sourceCode" id="cb240"><pre class="sourceCode elixir code-with-copy"><code class="sourceCode elixir"><span id="cb240-1"><a href="#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet_person<span class="fu">(</span>%<span class="fu">{</span><span class="st">"name"</span> <span class="op">=&gt;</span> name<span class="fu">})</span>, <span class="va">do:</span> <span class="st">"Hello, </span><span class="ot">#{</span>name<span class="ot">}</span><span class="st">!"</span></span>
@@ -3509,9 +3509,9 @@ iex(53)&gt; numbers
 </section>
 <section id="tuples" class="level2" data-number="3.13">
 <h2 data-number="3.13" class="anchored" data-anchor-id="tuples"><span class="header-section-number">3.13</span> Tuples</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>That is great - what is next?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Excellent! Now that you’ve practiced maps, let’s move on to <strong>Tuples</strong> - the other essential data structure you’ll see constantly in Phoenix.</p>
 </section>
 <section id="tuples-in-elixir-vs-python" class="level2" data-number="3.14">
@@ -3577,9 +3577,9 @@ iex(53)&gt; numbers
 <span id="cb256-5"><a href="#cb256-5" aria-hidden="true" tabindex="-1"></a>error <span class="op">=</span> <span class="fu">{</span><span class="va">:error</span>, <span class="st">"Something went wrong"</span><span class="fu">}</span></span>
 <span id="cb256-6"><a href="#cb256-6" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="va">:error</span>, reason<span class="fu">}</span> <span class="op">=</span> error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What do you get when you run these? Examine the values of message and reason and see whether they match your expectation.</p>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>Yes they work as expected. Can we do some exercises using tuples?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 <section id="multiple-function-clauses" class="level2" data-number="3.18">
 <h2 data-number="3.18" class="anchored" data-anchor-id="multiple-function-clauses"><span class="header-section-number">3.18</span> 🎯 Multiple Function Clauses</h2>
@@ -3749,9 +3749,9 @@ iex(53)&gt; numbers
 </section>
 <section id="keyword-lists" class="level2" data-number="3.26">
 <h2 data-number="3.26" class="anchored" data-anchor-id="keyword-lists"><span class="header-section-number">3.26</span> Keyword Lists</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>that is great - let us cover keyword lists.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 </section>
 <section id="keyword-lists-in-elixir-vs-python" class="level1" data-number="4">
@@ -3827,9 +3827,9 @@ iex(53)&gt; numbers
 <span id="cb279-9"><a href="#cb279-9" aria-hidden="true" tabindex="-1"></a>new_attrs <span class="op">=</span> <span class="ot">[</span><span class="va">class:</span> <span class="st">"btn-large"</span><span class="ot">]</span> <span class="op">++</span> attrs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What do you get when you run these?</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes they work as expected - please give me 3 meaningful exercises.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 </section>
 <section id="keyword-list-practice-exercises" class="level1" data-number="5">
@@ -3898,9 +3898,9 @@ iex(53)&gt; numbers
 <span id="cb285-6"><a href="#cb285-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span><span class="fu">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>These exercises show you the practical Phoenix patterns you’ll encounter: extracting field information, filtering configurations, and building HTML attributes from keyword lists!</p>
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>that is great. I am happy to see examples relevant to phoenix. Is that all with the data structures or do we have more?</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great question! We’ve covered the <strong>essential three</strong> data structures you’ll use 90% of the time in Phoenix:</p>
 <p>✅ <strong>Lists</strong> - <code>[1, 2, 3]</code> (collections, sequences)<br>
 ✅ <strong>Maps</strong> - <code>%{key: value}</code> (data modeling, JSON)<br>
@@ -3933,9 +3933,9 @@ iex(53)&gt; numbers
 </section>
 <section id="structs" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="structs"><span class="header-section-number">5.7</span> Structs</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>let us cover Structs and then wrap up data structures.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 </section>
 <section id="structs-in-elixir" class="level1" data-number="6">
@@ -4051,7 +4051,7 @@ iex(53)&gt; numbers
 <p>What do you get when you run these?</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>they work nicely. But what is that message when I tried to execute defmodule. By the way, what is defmodule? You have not yet covered it, I guess.</p>
 <pre><code>warning: redefining module Task (current version loaded from /opt/homebrew/Cellar/elixir/1.18.3/lib/elixir/lib/elixir/ebin/Elixir.Task.beam)
 └─ iex:121: Task (module)
@@ -4062,7 +4062,7 @@ iex(53)&gt; numbers
    95, 105, 110, 102, 111, 95, 95, 10, 97, ...&gt;&gt;,
  %Task{title: nil, description: nil, completed: false, priority: :medium}}
 </code></pre>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Great observation! You’ve discovered two important things:</p>
 </section>
 <section id="the-warning-message" class="level2" data-number="6.7">
@@ -4101,9 +4101,9 @@ iex(53)&gt; numbers
 <p>Try this version - no warnings!</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes they work nicely.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 <p>Perfect! Now you have a solid understanding of all the essential data structures for Phoenix development:</p>
 </section>
 <section id="data-structures-summary" class="level2" data-number="6.10">
@@ -4125,9 +4125,9 @@ iex(53)&gt; numbers
 </section>
 <section id="control-flow" class="level2" data-number="6.12">
 <h2 data-number="6.12" class="anchored" data-anchor-id="control-flow"><span class="header-section-number">6.12</span> Control flow</h2>
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>please do a high-level summary of control flows and then we can go into a little more detail, one by one.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 </section>
 <section id="control-flow-in-elixir---high-level-overview" class="level1" data-number="7">
@@ -4264,9 +4264,9 @@ iex(53)&gt; numbers
 <p><strong>Ready to start with <code>case</code> statements?</strong> They’re the heart of Elixir’s error handling!</p>
 <!-- no tool use -->
 <!-- no tool use -->
-<p><strong>AI Prompt</strong></p>
+<p><strong>Python Pro</strong></p>
 <p>yes - let us start with case statements.</p>
-<p><strong>AI Response</strong></p>
+<p><strong>AI Mentor</strong></p>
 </section>
 </section>
 <section id="case-statements-in-elixir" class="level1" data-number="8">

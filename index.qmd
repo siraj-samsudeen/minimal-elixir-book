@@ -45,11 +45,11 @@ There is one more thing - I am gonna use AI extensively to help me write the boo
 6. Keep it minimal - focus on the 20% of the language that will the reader 80% returns on his time invested
 7. Point out the joyful developer experience in Elixir's design whenever possible.
 
-**AI Prompt**
+**Python Pro**
 
 So, where should I start with Elixir?
 
-**AI Response**
+**AI Mentor**
 
 Here are 3 key ideas that you will see mentioned a lot in Elixir - we will go through some hands-on exercises to understand them.
 
@@ -65,7 +65,7 @@ Here is a test to check whether you got iex installed - what happens when you ty
 
 ## Interactive Elixir Shell
 
-**AI Prompt**
+**Python Pro**
 
 here is what I see in my iTerm - I am on a Mac. 
 
@@ -88,13 +88,13 @@ Implemented protocols
   Collectable, IEx.Info, Inspect, JSON.Encoder, List.Chars, String.Chars
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect! I see you have `iex` working correctly. The `i` function gives you information about any value - in this case showing that "cat" is a binary (You expected to see string - right? But Elixir calls it binary and you will understand over time why. Don't delve into too much as it is not important - Just remember to map string to binary whenever you have to do something with string).
 
 Now just type h and see what you get. You will see a lot of output and you have to scroll up a lot to see the first page. See whether you can find anything related to the previous command you executed in that first page.
 
-**AI Prompt**
+**Python Pro**
 
 Yes - I see the help for the `i` command I used - it says `i/1` is a function to introspect any value. A lot of jargons, I guess :). But I got it, but what is that suffix `/1` and `/2` I see quite a bit? 
 
@@ -137,7 +137,7 @@ There are many other helpers available, here are some examples:
   • i/1             - prints information about the given term
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great observation! The `/1` and `/2` notation is how Elixir indicates function arity - another jargon for the number of arguments a function takes. Just note this term `arity` as you will see it used quite a lot in Elixir. 
 
@@ -148,11 +148,11 @@ For example:
 
 This is important in Elixir because unlike Python, you can have multiple functions with the same name but different number of arguments, and they're considered completely different functions.
 
-**AI Prompt**
+**Python Pro**
 
 in python, the same function can't be used again with a different number of arguments - right?
 
-**AI Response**
+**AI Mentor**
 
 That's correct! In Python, you can't have multiple functions with the same name but different numbers of arguments in the same scope.
 
@@ -199,7 +199,7 @@ h h
 
 What do you notice about the output of these commands?
 
-**AI Prompt**
+**Python Pro**
 
 `i` prints information about the data type of any given term.
 
@@ -232,7 +232,7 @@ module.function/arity, for example:
 
 And interestingly, I already see the arity word here. It says `function/arity pair`. But I also see the word `macro` - what is that? I have heard of macro only in Excel, not in programming languagues like Python or JS.
 
-**AI Response**
+**AI Mentor**
 
 Good question! Macros in programming languages are quite different from Excel macros.
 
@@ -254,7 +254,7 @@ Let us get started with the first concept - pattern matching. Do you remember ho
 
 ## Pattern Matching
 
-**AI Prompt**
+**Python Pro**
 
 Destructuring (also called unpacking) in Python allows you to assign elements from a list (or any other iterable, if I want to get more precise) to multiple variables in a single statement. 
 
@@ -268,7 +268,7 @@ In this example: The list numbers contains three elements. The statement a, b, c
 
 Rule : The number of variables on the left must match the number of elements in the iterable on the right.
 
-**AI Response**
+**AI Mentor**
 
 Excellent! You've got a solid understanding of Python's destructuring.
 
@@ -282,11 +282,11 @@ iex> list = [1, 2, 3]
 
 before you press Enter, think about what you expect to see. In python, if you type this into `ipython` what would you see? Try that first and then do the same thing in iex and let me know what you see as the difference. 
 
-**AI Prompt**
+**Python Pro**
 
 Since assignment is just a statement, I did not expect anything to be printed in the console and ipython did not print anything. But surprisingly, iex printed the list `[1,2,3]` - why?
 
-**AI Response**
+**AI Mentor**
 
 Great observation! This is one of the first differences you'll notice between Python and Elixir.
 
@@ -314,7 +314,7 @@ iex> a, b, c = numbers
 
 What do you expect to happen? And what actually happens when you run it?
 
-**AI Prompt**
+**Python Pro**
 
 Hmm. that is mean - iex screamed at me in anger - here is what I see, but the error stacktrace is just 4 lines - that is nice :)
 
@@ -333,7 +333,7 @@ iex(2)> a, b, c = numbers
     (stdlib 6.2.2) proc_lib.erl:329: :proc_lib.init_p_do_apply/3
 ```
 
-**AI Response**
+**AI Mentor**
 
 So, you thought that you're gonna learn by executing everything perfectly. Had I given you the proper syntax, I am sure you will have NOT noticed that there is a closing and opening bracket around `a, b, c` . By making a mistake, now you learnt that things are different from python here. To me, this is the essence of learning by doing - you actively experiment by doing things, off the track, to see how Elixir works. 
 So you got to experience how Elixir reports error. Even though it is NOT clear why there is a syntax error before the comma, you can see that the stack trace and the overall error reporting is much shorter and sweeter compared to Python. 
@@ -353,7 +353,7 @@ a, b, c = numbers
 
 So, python is creating a tuple, behind the scenes, and uses it to unpack. But Elixir's philosophy is being explicit. Hence, it wants you to specify things explicitly - so, you have to use a list on the left side too. So, can you fix the issue yourself? 
 
-**AI Prompt**
+**Python Pro**
 
 I went ahead and fixed the issue, and it was easy enough. 
 
@@ -372,7 +372,7 @@ error: undefined function print/3 (there is no such import)
 ** (CompileError) cannot compile code (errors have been logged)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Excellent! You fixed the pattern matching syntax perfectly - `[a, b, c] = list` is exactly right. You're absolutely right - Elixir wants you to be explicit with the square brackets `[a, b, c]` to match the structure on both sides.
 
@@ -395,7 +395,7 @@ a
 
 What happens? And then see if you can figure out how to display all three values.
 
-**AI Prompt**
+**Python Pro**
 
 No I could not figure it out. I tried `IO.puts(a,b)` and it reported an error about FunctionClause - that is weird - I was expecting it to say that print/2 is not found. 
 ```
@@ -418,7 +418,7 @@ iex(8)> IO.puts(a, b)
     iex:8: (file)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great experimentation! You've discovered something important about Elixir's error reporting.
 
@@ -432,7 +432,7 @@ So `IO.puts` has two versions:
 
 Did you try to pass a list to IO.puts and see what it does? 
 
-**AI Prompt**
+**Python Pro**
 
 It printed something weird - why? 
 ```
@@ -447,7 +447,7 @@ iex> IO.puts(a)
 :ok
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great observations! You've hit two important Elixir concepts:
 
@@ -480,7 +480,7 @@ Now try `IO.puts([99, 97, 116])` and see what gets printed? you got the `cat` - 
 
 If you want to print a list or any other complex data structure, use IO.inspect. Just do a quick `h IO.inspect` and see what it says. The documentation is wonderful as it gives very clear example usages. Now try to print the values of `a,b,c` using IO.inspect and see whether you can succeed.
 
-**AI Prompt**
+**Python Pro**
 
 Yes I was able to succeeed.
 ```
@@ -490,7 +490,7 @@ iex(16)> IO.inspect([a,b,c])
 ```
 I guess that the first line is the actual printing and the 2nd line is the same value returned by IO.inspect - but why does it do it?
 
-**AI Response**
+**AI Mentor**
 
 Exactly right! You've figured out the pattern.
 
@@ -508,7 +508,7 @@ And this is very similar to python f-strings, though python has more than 1 way 
 print(f"{a} {b} {c}")
 ```
 
-**AI Prompt**
+**Python Pro**
 
 Yes I tried it and it works
 ```
@@ -525,7 +525,7 @@ iex(18)> IO.puts(a)
 
 when I tried IO.puts(a) and you said that puts means put the string, but a is NOT a string. It is an integer and you said that Elixir is explicit :)
 
-**AI Response**
+**AI Mentor**
 
 Excellent catch! You've spotted an inconsistency in my explanation. You're absolutely right to question this.
 
@@ -542,11 +542,11 @@ But that would be quite verbose for such a common operation.
 
 So you've discovered an important nuance: Elixir balances explicitness with practicality. It's explicit about data structures (like requiring `[a, b, c]` instead of `a, b, c`), but more forgiving with common operations like printing.
 
-**AI Prompt**
+**Python Pro**
 
 Ok - we have covered a lot of ground and my head is spinning. Can we summarize?
 
-**AI Response**
+**AI Mentor**
 
 Absolutely! Let's summarize what you've learned so far:
 
@@ -571,11 +571,11 @@ Absolutely! Let's summarize what you've learned so far:
 - Every expression returns a value
 - Atoms like `:ok` indicate status
 
-**AI Prompt**
+**Python Pro**
 
 that is great - please show me the python and Elixir code that we have walked through side-by-side to go over it once more.
 
-**AI Response**
+**AI Mentor**
 
 Here's the side-by-side comparison of what we've covered:
 
@@ -611,11 +611,11 @@ IO.inspect([a, b, c])      # Prints: [1, 2, 3], returns: [1, 2, 3]
 
 Notice how Elixir always shows you what each expression returns, while Python's assignment statements return nothing.
 
-**AI Prompt**
+**Python Pro**
 
 Great - now, give me a little exercise to put what I have learnt to use. Maybe, I can try pattern matching a list of words. Give me the python code for me to translate into Elixir.
 
-**AI Response**
+**AI Mentor**
 
 Perfect! Here's a Python exercise for you to translate:
 
@@ -626,7 +626,7 @@ first, second, third = fruits
 print(f"I like {first} the most!")
 ```
 
-**AI Prompt**
+**Python Pro**
 
 Yes, I succeeded and here is my code
 ```elixir
@@ -635,7 +635,7 @@ fruits = ["apple", "banana", "cherry"]
 IO.puts("I like #{first} the most!")
 ```
 
-**AI Response**
+**AI Mentor**
 
 Excellent work! You've translated it perfectly. Your Elixir code shows you understand:
 
@@ -652,7 +652,7 @@ print('All my fruits:', fruits)
 ```
 Hint: type `h inspect` and see what it says. 
 
-**AI Prompt**
+**Python Pro**
 
 Haha...That was not a tough question at all. Here is my Elixir code:
 ```
@@ -660,7 +660,7 @@ IO.puts("All my fruits: #{inspect(fruits)}")
 ```
 But what is the difference between IO.inspect and plain inspect? I am confused.
 
-**AI Response**
+**AI Mentor**
 
 Great job! You nailed it perfectly.
 
@@ -676,11 +676,11 @@ Mental model:
 > `inspect` = convert to string (like Python's str() or repr())
 > `IO.inspect` = print and return (like Python's print() but returns the value)
 
-**AI Prompt**
+**Python Pro**
 
 Ok I understand that - but we started this discussion on pattern matching saying this is a match operator and not an assignment operator. So, how does assignment work in Elixir?
 
-**AI Response**
+**AI Mentor**
 
 Excellent question! This gets to the heart of why Elixir calls `=` as the `match operator` rather than `assignment`.
 
@@ -714,12 +714,12 @@ x = 5    # x is now bound to 5
 5 = x   # What do you think happens here?
 ```
 
-**AI Prompt**
+**Python Pro**
 
 It just returned the right side value - which is 5, as expected. 
 But I was expecting it to throw an error as assignment flows from right to left in almost all languages I have worked, starting from C to Java to Python and even JS.
 
-**AI Response**
+**AI Mentor**
 
 Exactly! You've discovered the fundamental difference between assignment and pattern matching.
 
@@ -739,7 +739,7 @@ What do you think will happen now? And why?
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 I get a match error - it makes sense as 6 is not equal to 5
 ```
@@ -749,7 +749,7 @@ iex(35)> 6=x
     iex:35: (file)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect! You've grasped the core concept of pattern matching.
 
@@ -877,11 +877,11 @@ While computation often flows **right-to-left**, Elixir's `=` allows **bidir
 
 Stop thinking "`=` means assign to" and start thinking "`=` means equals" - just like in mathematics. While we often compute right-to-left, the ability to assert equality in any direction is what makes pattern matching fundamentally different from assignment.
 
-**AI Prompt**
+**Python Pro**
 
 ok - I enjoyed the detour on the meaning of `=` that I have forgotten over the years. Ok, what do we get by having this bidirectional equality in Elixir, that I don't get in python?
 
-**AI Response**
+**AI Mentor**
 
 Great question! The bidirectional equality gives you several powerful capabilities that Python doesn't have:
 
@@ -923,13 +923,13 @@ if z != 0:
 
 So, this results in lot less code compared to Python and much easier to understand as the error-handling is delegated to Elixir - we work with the matches and if there is no match, Elixir will raise an error. 
 
-**AI Prompt**
+**Python Pro**
 
 that is nice - for the first time, I am hearing something concrete from you - I have read a lot of material on pattern matching, but never really understood that the essence here is the bidirectional equality and the joy it gives by enabling us to write concise code. 
 
 So, what else should I know about pattern matching?
 
-**AI Response**
+**AI Mentor**
 
 Excellent! I'm glad that clicked for you. Let's explore a few more powerful pattern matching features:
 
@@ -947,7 +947,7 @@ Sometimes you only care about some parts of the data:
 Try this in iex and see what happens. What do you think `_` will be bound to?
 
 
-**AI Prompt**
+**Python Pro**
 
 When I try to print `_` in python, it prints `banana`. But Elixir got angry with me and gave me severe warnings to behave properly!
 ```
@@ -960,7 +960,7 @@ error: invalid use of _. _ can only be used inside patterns to ignore values and
 ** (CompileError) cannot compile code (errors have been logged)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect observation! You've discovered an important difference between Python and Elixir.
 
@@ -979,7 +979,7 @@ _middle  # This works - returns "banana"
 
 Try this and see what happens. Elixir will give you a warning but still work.
 
-**AI Prompt**
+**Python Pro**
 
 Yes - true to what you said, Elixir politely informed me about the mismatch between my intention and then actual code, but it still printed banana
 ```
@@ -990,7 +990,7 @@ warning: the underscored variable "_middle" is used after being set. A leading u
 "banana"
 ```
 
-**AI Response**
+**AI Mentor**
 
 That is great. Now let us look at another oft-used pattern. 
   
@@ -1030,7 +1030,7 @@ head, *tail = [] # would this work in python and in elixir?
 
 ```
 
-**AI Prompt**
+**Python Pro**
 
 Yes I tried those 3 statements one by one in ipython and here is what I got:
 
@@ -1081,7 +1081,7 @@ iex(45)> [ head | tail ] = []
     iex:45: (file)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Excellent! You've discovered that Python and Elixir handle head/tail decomposition very similarly:
 
@@ -1110,7 +1110,7 @@ What do you think `rest` will be?
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 As expected `rest` is an empty list. 
 
@@ -1120,7 +1120,7 @@ I love the flexibility of star operator in python - can we do something like thi
 first, *middle, last = [1, 2, 3, 4] # I want the first and last alone and the rest in a list
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great question! Unfortunately, Elixir's `|` operator is more limited than Python's `*` operator. 
 
@@ -1148,11 +1148,11 @@ This is one area where Python's unpacking is more flexible than Elixir's pattern
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Haha. You have finally hit upon a place where Elixir is less powerful than Python. Tell me more - you were always bragging about Elixir's superiority. Now I guess, you will make up some valid-sounding reason for why extracting the first part or the middle part is NOT that imporant.
 
-**AI Response**
+**AI Mentor**
 
 Haha, you caught me! You're absolutely right - I have been highlighting Elixir's strengths, and now you've found a legitimate area where Python is more flexible.
 
@@ -1170,11 +1170,11 @@ So what do you think - should we explore some areas where Elixir's pattern match
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 It is OK - I just want to poke you once to bring you to terra firma (as you were in cloud nine all the time about Elixir). Anyway, I am excited about Elixir as well, so - no more poking at you. Are we done with pattern matching - if yes, please summarise what we have covered? if not, tell me what we are missing.
 
-**AI Response**
+**AI Mentor**
 
 Fair enough! You've successfully brought me back to earth. 😄
 
@@ -1213,11 +1213,11 @@ Ready to move on to our second core concept: **immutability**?
 
 ## Immutability
 
-**AI Prompt**
+**Python Pro**
 
 yes my dear Elixir mentor.
 
-**AI Response**
+**AI Mentor**
 
 Excellent! Let's dive into **immutability** - another core concept that makes Elixir different from Python.
 
@@ -1241,12 +1241,12 @@ print(backup)  # What gets printed here?
 
 Try this in Python first, then tell me what you observe. This will help us understand why immutability matters.
 
-**AI Prompt**
+**Python Pro**
 
 backup is also modified to [1, 2, 3, 4, 5]. And that is expected as lists are references in python like arrays are pointers in C and C++. 
 So, no big deal.
 
-**AI Response**
+**AI Mentor**
 
 Exactly! You understand the issue perfectly. In Python, `backup` and `numbers` point to the same list object in memory, so modifying one affects the other.
 
@@ -1278,11 +1278,11 @@ What do you think happens when you try to "modify" a list in Elixir?
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 when I press tab after typing `numbers.` i don't seem to get anything, may be tab completion is not working
 
-**AI Response**
+**AI Mentor**
 
 That's actually the point! There are no methods on the list itself because lists are immutable - you can't modify them directly.
 
@@ -1306,7 +1306,7 @@ The key insight: Instead of modifying existing data, Elixir creates new data str
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Here is what I got, when I tried your suggestion, but there is something curious in the output of `++` operator. It shows that tail operator `|`, rather than comma to separate the new element whereas the comma is used when I used the tail operator `|` - is Elixir playing it funny? 
 
@@ -1323,7 +1323,7 @@ iex(53)> numbers
 [1, 2, 3]
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great observation! You've discovered something important about how Elixir displays lists.
 
@@ -1352,11 +1352,11 @@ Try the corrected version and see how it displays now!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Yes that looks good now.
 
-**AI Response**
+**AI Mentor**
 
 Perfect! Now you see the difference:
 
@@ -1381,12 +1381,12 @@ Let's test your understanding: If you have a function that needs to "modify" a l
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 I guess, it would make a copy first, then do the modification and return the copy. 
 I think this idea of making a copy first and using that to modify is used by Pandas quite heavily as we could chain multiple operations on a dataframe. Am I right?
 
-**AI Response**
+**AI Mentor**
 
 You're thinking in the right direction, but there's a subtle difference!
 
@@ -1413,11 +1413,11 @@ We'll cover that next, but first - try creating a list that starts with `[1, 2, 
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 I got [0, 1, 2, 3, 4].
 
-**AI Response**
+**AI Mentor**
 
 Perfect! You successfully chained the operations:
 
@@ -1441,11 +1441,11 @@ Ready to learn about **piping** - Elixir's elegant solution for chaining operati
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 But before we start piping, tell me how Elixir manages this whole mess of all the variables left behind by each operation and the ton of memory it would consume?
 
-**AI Response**
+**AI Mentor**
 
 Excellent question! This is a crucial concern when moving from mutable to immutable languages.
 
@@ -1483,11 +1483,11 @@ The Erlang VM (BEAM) that runs Elixir has decades of optimization for exactly th
 
 This is why functional languages can be both safe AND performant.
 
-**AI Prompt**
+**Python Pro**
 
 Ok we have covered 2 topics - pattern matching and immutability. Please summarise both and tell me what is next.
 
-**AI Response**
+**AI Mentor**
 
 ## Summary So Far
 
@@ -1506,11 +1506,11 @@ Ok we have covered 2 topics - pattern matching and immutability. Please summaris
 
 Before we look at piping, I want you to look at how loops are handled in Elixir. Just to get you a bit excited! - there is no traditional for loop in Elixir :). Have you heard of that? 
 
-**AI Prompt**
+**Python Pro**
 
 Hmm. That is wild - I thought that conditionals and looping are the bread and butter of programming.
 
-**AI Response**
+**AI Mentor**
 
 You're absolutely right - conditionals and looping ARE fundamental! But Elixir takes a different approach to looping that's actually more powerful once you get used to it.
 
@@ -1595,7 +1595,7 @@ list(map(print_fruit, enumerate(fruits)))
 
 Each evolution solved real problems while building on Python's growing capabilities. Notice how Python gradually moved from "manual control" to "declarative intent."
 
-**AI Prompt**
+**Python Pro**
 
 I really like this detour. I am able to see how Python allows for all these different possibilities. How does Elixir compare? Does it only allow me to do `4. Functional style` only? 
 
@@ -1603,9 +1603,9 @@ The challenge I have with this kind of a functional code is that people write ev
 
 And even though generators are great from a conceptual idea perspective, they make it to hard to work in a REPL environment doing interactive coding as I have to often call list to see the results. I wish there is a better way in Python - how are these challenges tackled in Elixir?
 
-**AI Response**
+**AI Mentor**
 
-**AI Response**
+**AI Mentor**
 
 Excellent observations! You've hit on some real pain points with functional programming in Python. Elixir addresses these challenges elegantly:
 
@@ -1653,7 +1653,7 @@ Please don't try to execute these examples yet in iex - I just want to give you 
 
 So, how do you feel about the functional style in Elixir? 
 
-**AI Prompt**
+**Python Pro**
 
 Not having to do the list conversion each time is a great timesaver for me. But I really like the following simple idiomatic python way of going through each item inside a for loop. 
 
@@ -1664,7 +1664,7 @@ for fruit in fruits:
 
 To me, the idiomatic python code is so easy-to-read compared to the functional alternative. Why is this not supported in Elixir? Is that not functional? Why do I have to do this map thing. That always seems a little bit counterintuitive to me.
 
-**AI Response**
+**AI Mentor**
 
 You're absolutely right! That idiomatic Python for loop is beautifully readable and intuitive. Your frustration is completely valid! - See I also came from Python to Elixir. So I still love certain aspects of Python :)
 
@@ -1722,11 +1722,11 @@ So the "no for loop" design forces you away from dangerous mutation patterns and
 
 ## 3 Core Functional Patterns
 
-**AI Prompt**
+**Python Pro**
 
 Ok. That is a simple yet very clear and concrete explanation of why mutation inside a for loop can be dangerous. So, tell me if I want to make the switch to thinking more functionally, what should I do?
 
-**AI Response**
+**AI Mentor**
 
 Great question! Here's a practical roadmap to shift your thinking from imperative to functional:
 
@@ -1748,13 +1748,13 @@ Great question! Here's a practical roadmap to shift your thinking from imperativ
 
 That's it! Every loop you've ever written falls into one of these three patterns.
 
-**AI Prompt**
+**Python Pro**
 
 Wow - that is a very clear and concise way of thinking about it. 
 
 Let us go through a few examples that illustrate the different types of operations we do, under each of these 3 core functional patterns - map, filter and reduce.
 
-**AI Response**
+**AI Mentor**
 
 Perfect! Let's go through concrete examples that show how common operations fit these patterns - Please skim the examples to get an overall ideas - we will work through each of these cases one by one and see how to translate them into Elixir.
 
@@ -1814,7 +1814,7 @@ max(numbers)
 
 ## Core Functional Pattern 1 - Map
 
-**AI Prompt**
+**Python Pro**
 
 Let us start with problem 1.1 under Map - Make all uppercase. 
 
@@ -1829,7 +1829,7 @@ How do I transform this into Elixir? Please do not give me the answer - if you h
 
 I would like to learn by trying it myself and going through the struggle before peeking at the solution - research proves that this is the best way to learn for the long-term as these struggles create hooks in our brain to receive the answers and remember them for the long-term - if I read through your solution, it might feel good in the short-term, but I am unlikely to remember it in the long-term.
 
-**AI Response**
+**AI Mentor**
 
 Excellent approach! You're absolutely right about learning through struggle - it creates much stronger memory pathways.
 
@@ -1889,7 +1889,7 @@ list(map(lambda x: x.upper(), fruits))
 ```
 
 
-**AI Prompt**
+**Python Pro**
 
 yes I got it working
 
@@ -1898,7 +1898,7 @@ fruits = ["apple", "banana", "cherry"]
 Enum.map(fruits, fn x -> String.upcase(x) end)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Excellent work! You successfully pieced together all three ingredients:
 
@@ -1937,7 +1937,7 @@ Try translating this to Elixir. You already have all the ingredients you need!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 yes I got it.
 
@@ -1946,7 +1946,7 @@ prices = [10.0, 25.50, 8.75]
 Enum.map(prices, fn x -> x * 1.08 end)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect! You've got the pattern down. Notice how the anonymous function `fn x -> x * 1.08 end` directly mirrors the Python lambda logic.
 
@@ -1962,7 +1962,7 @@ words = ["cat", "elephant", "dog", "butterfly"]
 
 This one requires you to find the right function to get string length. Try looking up string length functions in Elixir. 
 
-**AI Prompt**
+**Python Pro**
 
 I nailed this one too.
 
@@ -1971,7 +1971,7 @@ words = ["cat", "elephant", "dog", "butterfly"]
 Enum.map(words, fn x -> String.length(x) end)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Fantastic! You're really getting the hang of this pattern. You correctly found `String.length/1` and applied it in the anonymous function.
 
@@ -2079,11 +2079,11 @@ h String           # Shows all String module functions
 
 This mental shift from "objects with methods" to "modules with functions" is fundamental to thinking functionally in Elixir.
 
-**AI Prompt**
+**Python Pro**
 
 Hmmm. That is interesting - but why did Elixir use `upcase` instead of `uppercase` - I searched for `upper` in hexdocs, but could not really figure out the function and I had to go through the entire list of functions to find it. Why change something that is well-established?
 
-**AI Response**
+**AI Mentor**
 
 Great question! This is actually a common frustration when switching between languages. The naming differences come from Elixir's heritage and design philosophy:
 
@@ -2117,12 +2117,12 @@ The good news: once you learn a few modules, the patterns become predictable.
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Ah! I never realized that Ruby and Erlang had this kind of a convention. It's surprising how often we equate familiarity with correctness. Thanks for helping me confront my confirmation bias. 
 So, what is the next detour?
 
-**AI Response**
+**AI Mentor**
 
 Exactly! That's a profound insight - familiarity often masquerades as correctness. It's one of the biggest hurdles when learning new languages or paradigms.
 
@@ -2323,11 +2323,11 @@ result = [1, 2, 3, 4, 5]
 
 This expression-oriented thinking is what makes Elixir's functional programming style so elegant and composable. When we later explore anonymous functions and the capture operator, you'll see how this "everything returns a value" principle makes the syntax feel natural and consistent.
 
-**AI Prompt**
+**Python Pro**
 
 That is beautiful - almost artistic. So, let us see why parantheses are optional. I am wondering how that is even possible.
 
-**AI Response**
+**AI Mentor**
 
 Great question! The optional parentheses in Elixir can seem magical at first, but there's elegant logic behind it.
 
@@ -2489,11 +2489,11 @@ Elixir's optional parentheses support the language's philosophy:
 
 This flexibility, combined with Elixir's "everything is an expression" design, creates a language that's both powerful and readable. When we explore anonymous functions and the capture operator next, you'll see how this optional parentheses feature makes functional programming patterns feel more natural.
 
-**AI Prompt**
+**Python Pro**
 
 That is nice - yes, the piping syntax looks inviting and it is one of thing that everyone seems to praise about Elixir. But what comes next in our coverage of anonymous functions?
 
-**AI Response**
+**AI Mentor**
 
 Great! Now that you understand expressions and optional parentheses, let's explore the different ways to write anonymous functions in Elixir. You've been using the basic `fn` syntax, but there are several variations that make code more concise. Let us start with the shorter syntax which you will see a lot in Phoenix code. 
 
@@ -2645,11 +2645,11 @@ You're literally **capturing** existing functions or expressions to create new
 
 This shorter syntax keeps your code clean when doing simple transformations!
 
-**AI Prompt**
+**Python Pro**
 
 Hmm. That reminds of the C days - pointers and addresses, etc. Anyway, I do agree that the syntax is shorter and compared to reading Python, it is more explicit. I am not sure whether I like it or not - I will let you know after I have used it for a while.
 
-**AI Response**
+**AI Mentor**
 
 That's a very mature approach! You're absolutely right to reserve judgment until you've used it in practice. The C pointer analogy is interesting - there is some similarity in that you're "pointing to" or "referencing" functions.
 
@@ -2929,11 +2929,11 @@ Enum.map([1, 2, 3], my_function)
 
 This syntax might feel unusual coming from other languages, but it's one of Elixir's ways of making code more explicit and preventing common mistakes!
 
-**AI Prompt**
+**Python Pro**
 
 wow - that is a lot to digest - but I am happy you used the same 3 examples as in the previous detour - that reduces my mental strain so that I can focus only on what is new.
 
-**AI Response**
+**AI Mentor**
 
 Exactly! I'm glad you noticed that intentional choice. Using the same examples lets you focus purely on the new concept (the dot syntax) without having to juggle new problem domains at the same time.
 
@@ -2952,11 +2952,11 @@ Ready to move on from these detours and get back to our functional patterns? We 
 
 ## Core Functional Pattern 2 - Filter
 
-**AI Prompt**
+**Python Pro**
 
 That was a lot of detours - But before we tackle the next pattern - can you do 2 summaries - one overall summary that summarizes all that we have covered so far. Then the next summary about the 3 core functional patterns and what we have covered there.
 
-**AI Response**
+**AI Mentor**
 
 ## Overall Summary: Everything We've Covered So Far
 
@@ -3021,11 +3021,11 @@ Ready to tackle **FILTER**?
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 that is a wonderful summary - let us start filtering now.
 
-**AI Response**
+**AI Mentor**
 
 Perfect! Let's dive into the **FILTER** pattern.
 
@@ -3084,7 +3084,7 @@ Once you find the right function, try translating this Python code to Elixir. Yo
 
 Give it a try!
 
-**AI Prompt**
+**Python Pro**
 
 I got it 
 ```elixir
@@ -3092,7 +3092,7 @@ words = ["cat", "elephant", "dog", "butterfly"]
 Enum.filter(words, fn x -> String.length(x) > 5 end)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Excellent! You nailed it perfectly. You correctly identified:
 
@@ -3120,7 +3120,7 @@ This should be even simpler than the string example. Give it a shot!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Yes done - easy, peasy
 ```elixir
@@ -3128,7 +3128,7 @@ numbers = [1, -2, 3, -4, 5, 0]
 Enum.filter(numbers, fn x -> x > 0 end)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect! You're getting the hang of this pattern. Much simpler indeed - no need for any module functions, just a direct comparison `x > 0`.
 
@@ -3151,7 +3151,7 @@ Give it a try!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Filter examples are very easy and I am really liking the repetition I get from the slightly varied tasks that help me to recall the new syntax multiple times.  
 ```elixir
@@ -3159,7 +3159,7 @@ fruits = ["apple", "banana", "cherry", "apricot"]
 Enum.filter(fruits, fn x -> String.starts_with?(x, "a") end)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Excellent! You found `String.starts_with?/2` perfectly. Notice how Elixir uses the `?` suffix to indicate functions that return `true`/`false` - this is a helpful convention you'll see throughout Elixir.
 
@@ -3187,11 +3187,11 @@ Ready to tackle the final pattern: **REDUCE**? This one combines all items into 
 
 ## Core Functional Pattern 3 - Reduce
 
-**AI Prompt**
+**Python Pro**
 
 yes - let us start REDUCING...
 
-**AI Response**
+**AI Mentor**
 
 Excellent! Let's dive into the **REDUCE** pattern - the most powerful of the three!
 
@@ -3240,11 +3240,11 @@ Give it a try!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 rather than just showing only sum, can you also show the variant using reduce in python also - otherwise, this exercise is not challenging at all
 
-**AI Response**
+**AI Mentor**
 
 Great point! You're absolutely right - just using `sum()` doesn't teach you the reduce pattern. Let me show you both approaches in Python:
 
@@ -3276,7 +3276,7 @@ This will help you understand both the convenient shortcut and the underlying pa
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Thanks. I got it - I almost cheated as I saw the code for summing as the first example when I did `h Enum.reduce`
 ```elixir
@@ -3288,7 +3288,7 @@ iex(44)> Enum.reduce(numbers, fn x, acc -> x + acc end)
 15
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect! You found both approaches:
 
@@ -3325,7 +3325,7 @@ Now translate **both versions** to Elixir:
 Try it out!
 
 
-**AI Prompt**
+**Python Pro**
 
 Hmmm. I am stuck as I don't know how to do if-else inside that anon function block
 ```elixir
@@ -3339,7 +3339,7 @@ iex(46)> Enum.reduce(numbers, fn x, acc -> if x > acc do  x else acc end)
     error: unexpected token: )
 ```
 
-**AI Response**
+**AI Mentor**
 
 Good catch! You're running into Elixir's `if` syntax inside anonymous functions. The issue is that Elixir's `if` statement needs `do...end` blocks, but that doesn't work cleanly inside the compact `fn...end` syntax.
 
@@ -3367,14 +3367,14 @@ Try the first solution - it should work perfectly and give you `9` as the result
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Great. I was thinking that there might be a max in Elixir. Then I thought that it would be inside Enum module - so, how I do write Enum.max by calling Enum.max inside it :) - So, I lost that line of thought. So, I was able to make it work - but what is this curious max function which does not seem to follow the Elixir convention of Module.function? 
 ```elixir
 Enum.reduce(numbers, fn x, acc -> max(x, acc) end)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Excellent observation! You've discovered something important about Elixir's design.
 
@@ -3408,11 +3408,11 @@ This is why your reduce solution works perfectly - you're using the two-argument
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 that is very nice and very interesting - So, there is direct equivalent for max and len functions in python here in Elixir. Great let us move on to the last reduce example.
 
-**AI Response**
+**AI Mentor**
 
 Exactly! Elixir does provide direct equivalents for many common Python functions, just organized differently:
 
@@ -3448,7 +3448,7 @@ Try it out!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 I translated the easy version. But I need some clues as `+` does not seem to work in Elixir for string concat - Hmmm. python was so much more intuitive. 
 ```elixir
@@ -3463,7 +3463,7 @@ iex(52)> Enum.reduce(words, fn x, acc  -> acc + x end)
     iex:52: (file)
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great job finding `Enum.join(words, ", ")`! 
 
@@ -3473,7 +3473,7 @@ You're right that `+` doesn't work for string concatenation in Elixir - that's r
 "Hello" <> " " <> "world"  # Result: "Hello world"
 ```
 
-**AI Prompt**
+**Python Pro**
 
 Yes it is working for me. 
 ```elixir
@@ -3485,7 +3485,7 @@ iex(54)> Enum.reduce(words, fn x, acc  -> acc <> ", " <>  x end)
 "Hello, beautiful, world"
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect! You figured out the string concatenation operator `<>` and got it working.
 
@@ -3521,11 +3521,11 @@ These three patterns handle 90% of all data processing tasks you'll encounter. R
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 That is great - let us summarize the 3 core functional patterns first and make sure that I understand them well by giving me 3 exercises which combines these ideas together.
 
-**AI Response**
+**AI Mentor**
 
 ## Summary: The 3 Core Functional Patterns
 
@@ -3569,7 +3569,7 @@ words = ["apple", "BANANA", "Cherry", "date", "ELDERBERRY"]
 # they are ["apple", "banana", "cherry", "elderberry"]
 ```
 
-**AI Prompt**
+**Python Pro**
 
 yes it was easy
 ```elixir
@@ -3583,7 +3583,7 @@ iex(59)> length(words)
 4
 ```
 
-**AI Response**
+**AI Mentor**
 
 Excellent work! You correctly applied all three patterns in sequence:
 
@@ -3607,7 +3607,7 @@ numbers = [1, -2, 3, -4, 5, -6, 7, 8, -9, 10]
 
 So the expected result is **248**. Give this one a try!
 
-**AI Prompt**
+**Python Pro**
 
 I got it - I really like the simple touch of Elixir - it returns the right-hand side after pattern-matching which helps me to immediately see the output in a REPL session like this - I love this.
 
@@ -3622,7 +3622,7 @@ iex(63)> Enum.sum(numbers)
 248
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect! You nailed it exactly right. I love your observation about Elixir returning the right-hand side value - it really does make REPL-driven development so much more pleasant compared to Python where you often have to print or re-type variable names to see results.
 
@@ -3643,7 +3643,7 @@ sentences = ["Hello world", "Elixir is fun", "I love programming", "Code every d
 
 This one introduces a new challenge - you'll need to look up `String.split/1` and figure out how to flatten a list of lists into a single list. Try exploring the `List` module for a flatten function!
 
-**AI Prompt**
+**Python Pro**
 
 Yes - it felt a bit uneasy as I was not sure how to flatten the list of lists. But I got it - I was able to find `List.flatten/1` function. 
 ```elixir
@@ -3660,7 +3660,7 @@ iex(74)> length(words)
 7
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great work! You successfully found `List.flatten/1` and applied the pipeline. I can see you got 7 words instead of the expected 6, but let me check your logic...
 
@@ -3871,11 +3871,11 @@ Instead of reading inside-out, you read top-to-bottom, just like following a rec
 
 **Remember**: `data |> function()` is the same as `function(data)` - the pipe just makes the data flow more obvious and readable.
 
-**AI Prompt**
+**Python Pro**
 
 That is a wonderful detour.  I guess that these 3 exercises with all these intermediate variables will become more elegant with the pipe operator.
 
-**AI Response**
+**AI Mentor**
 
 Exactly! You've hit the nail on the head. All those intermediate variables (`words = Enum.map(words, ...)`, `words = Enum.filter(words, ...)`) are exactly what the pipe operator eliminates.
 
@@ -3901,7 +3901,7 @@ The `|>` operator takes the result from the left side and passes it as the **fir
 
 Try this transformation yourself with Exercise 1.
 
-**AI Prompt**
+**Python Pro**
 
 this is beautiful. I just copied and pasted your code into iex and iex somehow intuitively picked up the result of the previous expression and passed it to pipe
 ```elixir
@@ -3915,7 +3915,7 @@ iex(84)> |> length()
 4
 ```
 
-**AI Response**
+**AI Mentor**
 
 Wow! That's incredible - you've discovered one of the most delightful features of IEx! 
 
@@ -3944,11 +3944,11 @@ Try converting your Exercise 2 solution using pipes now. You'll love how it read
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 can you please recall the code I used for exercise 2?
 
-**AI Response**
+**AI Mentor**
 
 Of course! Here's your Exercise 2 solution:
 
@@ -3963,7 +3963,7 @@ Now try converting this to use the pipe operator! Start with the initial list an
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Great - this definitely feels better and easier. I loved the flexibility to drop the parantheses for Enum.sum. 
 
@@ -3979,7 +3979,7 @@ iex(88)> |> Enum.sum
 
 ```
 
-**AI Response**
+**AI Mentor**
 
 Perfect! You've really got the hang of this. I love how you noticed the flexibility with parentheses - `|> Enum.sum` is so clean and readable.
 
@@ -4008,7 +4008,7 @@ Can you convert this to a beautiful pipeline?
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Yes I have done it, But I tried to use the shorter syntax for anon functions, but one place, I got an error which perplexed me - take a look. 
 ```elixir
@@ -4034,7 +4034,7 @@ iex(93)> |> length
 7
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great work! You successfully converted it to a beautiful pipeline. Your error discovery is actually a fantastic learning moment!
 
@@ -4069,11 +4069,11 @@ Your final pipeline is beautiful - it reads like a story from top to bottom!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 ok great - can you please summarize pipe operator and is there anything else to know about piping syntax in Elixir?
 
-**AI Response**
+**AI Mentor**
 
 ## Pipe Operator Summary
 
@@ -4138,11 +4138,11 @@ That covers the essential piping knowledge! The pipe operator is one of Elixir's
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 Ok, I think that we have covered 3 key ideas that we started with - pattern matching, immutability and piping - can you please summarise?
 
-**AI Response**
+**AI Mentor**
 
 ## Summary: The 3 Core Elixir Concepts
 
@@ -4191,11 +4191,11 @@ These three concepts form the foundation of thinking functionally in Elixir!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 ok what comes next?
 
-**AI Response**
+**AI Mentor**
 
 Great question! You've built a solid foundation in Elixir's core concepts. Here are the natural next steps:
 
@@ -4238,11 +4238,11 @@ Your learning style and timeline will help determine the best path!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 i want to do a phoeix-focused path, but let us not jump into phoenix just yet. My aim is to generate a to-do list app or blog app at the end of the book and I should be able to read through the code and understand most of the things. So, what topics should be covered next?
 
-**AI Response**
+**AI Mentor**
 
 Perfect! Building toward a Phoenix to-do or blog app is an excellent goal. Let me map out the essential Elixir concepts you'll need to understand Phoenix code comfortably.
 
@@ -4283,11 +4283,11 @@ This sequence will prepare you to read and understand Phoenix code naturally. Ea
 
 ## Maps
 
-**AI Prompt**
+**Python Pro**
 
 yes let us cover maps and see how they compare with python.
 
-**AI Response**
+**AI Mentor**
 
 # Maps in Elixir vs Python
 
@@ -4456,11 +4456,11 @@ def greet_person(_), do: "Hello, stranger!"
 - Keys are dynamic or come from user input
 - Interfacing with external systems
 
-**AI Prompt**
+**Python Pro**
 
 that is great - so, you have used an example where pattern matching is done on function args - that is intriguing. I think you have not covered this before.
 
-**AI Response**
+**AI Mentor**
 
 You're absolutely right! I introduced pattern matching in function arguments without explaining it first - that's a sneak peek of a powerful Elixir feature we haven't covered yet.
 
@@ -4648,11 +4648,11 @@ employees
 
 ## Tuples
 
-**AI Prompt**
+**Python Pro**
 
 That is great - what is next?
 
-**AI Response**
+**AI Mentor**
 
 Excellent! Now that you've practiced maps, let's move on to **Tuples** - the other essential data structure you'll see constantly in Phoenix.
 
@@ -4741,11 +4741,11 @@ error = {:error, "Something went wrong"}
 
 What do you get when you run these? Examine the values of message and reason and see whether they match your expectation.
 
-**AI Prompt**
+**Python Pro**
 
 Yes they work as expected. Can we do some exercises using tuples?
 
-**AI Response**
+**AI Mentor**
 
 ## 🎯 Multiple Function Clauses
 
@@ -4978,11 +4978,11 @@ This pattern matching approach makes your code more readable, safer, and more "E
 
 ## Keyword Lists
 
-**AI Prompt**
+**Python Pro**
 
 that is great - let us cover keyword lists.
 
-**AI Response**
+**AI Mentor**
 
 # Keyword Lists in Elixir vs Python
 
@@ -5097,11 +5097,11 @@ What do you get when you run these?
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 yes they work as expected - please give me 3 meaningful exercises.
 
-**AI Response**
+**AI Mentor**
 
 # Keyword List Practice Exercises
 
@@ -5198,11 +5198,11 @@ These exercises show you the practical Phoenix patterns you'll encounter: extrac
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 that is great. I am happy to see examples relevant to phoenix. Is that all with the data structures or do we have more?
 
-**AI Response**
+**AI Mentor**
 
 Great question! We've covered the **essential three** data structures you'll use 90% of the time in Phoenix:
 
@@ -5248,11 +5248,11 @@ These will help you understand Phoenix's error handling and request processing p
 
 ## Structs
 
-**AI Prompt**
+**Python Pro**
 
 let us cover Structs and then wrap up data structures.
 
-**AI Response**
+**AI Mentor**
 
 # Structs in Elixir
 
@@ -5401,7 +5401,7 @@ What do you get when you run these?
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 they work nicely. But what is that message when I tried to execute defmodule. By the way, what is defmodule? You have not yet covered it, I guess. 
 
@@ -5417,7 +5417,7 @@ warning: redefining module Task (current version loaded from /opt/homebrew/Cella
 
 ```
 
-**AI Response**
+**AI Mentor**
 
 Great observation! You've discovered two important things:
 
@@ -5478,11 +5478,11 @@ Try this version - no warnings!
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 yes they work nicely.
 
-**AI Response**
+**AI Mentor**
 
 Perfect! Now you have a solid understanding of all the essential data structures for Phoenix development:
 
@@ -5514,11 +5514,11 @@ Ready to learn how to handle success and error cases like a pro?
 
 ## Control flow
 
-**AI Prompt**
+**Python Pro**
 
 please do a high-level summary of control flows and then we can go into a little more detail, one by one.
 
-**AI Response**
+**AI Mentor**
 
 # Control Flow in Elixir - High-Level Overview
 
@@ -5639,11 +5639,11 @@ end
 
 <!-- no tool use -->
 
-**AI Prompt**
+**Python Pro**
 
 yes - let us start with case statements.
 
-**AI Response**
+**AI Mentor**
 
 # Case Statements in Elixir
 

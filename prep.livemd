@@ -1,0 +1,73 @@
+# Minimal Elixir Book Prep
+
+## send and receive messages
+
+```elixir
+# A simple process that receives a message
+pid = spawn(fn ->
+  receive do
+    {:hello, from} ->
+      IO.puts("Hello from #{inspect(from)}")
+      send(from, :ok)
+  end
+end)
+
+send(pid, {:hello, self()})
+
+receive do
+  :ok -> IO.puts("All good!")
+end
+```
+
+```elixir
+"Process ID : #{inspect(self())}"
+```
+
+```elixir
+send(self(), {:no_handler, "Sit idle"})
+```
+
+```elixir
+receive do
+  {:no_handler, msg} -> IO.puts(msg)
+end
+```
+
+```elixir
+child_pid = spawn(fn -> 
+  receive do
+    {:no_handler, msg} -> IO.puts(msg)
+  end
+end)
+```
+
+```elixir
+send(child_pid, {:child, "are you OK?"})
+```
+
+```elixir
+IO.inspect(:erlang.process_info(self(), :messages), label: "Current mailbox")
+```
+
+## spawn_link
+
+```elixir
+spawn(fn -> raise "oops" end)
+IO.puts("Still running!")
+```
+
+```elixir
+spawn_link(fn -> raise "fail fast" end)
+IO.puts("you won't see this")
+```
+
+```elixir
+Process.flag(:trap_exit, true)
+
+spawn_link(fn -> exit(:oops) end)
+
+receive do
+  {:EXIT, pid, reason} ->
+    IO.puts("Linked process #{inspect(pid)} exited with reason: #{inspect(reason)}")
+end
+```
