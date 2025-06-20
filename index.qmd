@@ -2,7 +2,7 @@
 title: Minimal Elixir to be Productive in Phoenix
 ---
 
-# Chapter 1
+
 ## Python Pro meets AI Mentor to Learn Elixir using 80/20 Rule
 
 
@@ -239,6 +239,7 @@ Good question! Macros in programming languages are quite different from Excel ma
 In Elixir (and many other languages), a macro is code that writes code. Think of it as a function that runs at compile time rather than runtime, and it can transform your code before it's actually compiled.
 
 Here's a simple way to understand it:
+
 - Regular functions: Take data as input, return data as output
 - Macros: Take code as input, return code as output
 
@@ -272,7 +273,9 @@ Rule : The number of variables on the left must match the number of elements in 
 
 Excellent! You've got a solid understanding of Python's destructuring.
 
-In Elixir, we have something similar but rather than calling `=` `assignment operator`, Elixir calls it `match operator` and when an Elixir pro looks at this line, he will say this is NOT an assignment, but pattern matching. It would make you wonder `What?` Let us tackle this one by one, by translating each line from your python code into Elixir equivalent. 
+In Elixir, we have something similar but rather than calling `=` as `assignment operator`, Elixir calls it `match operator` and when an Elixir pro looks at this line `numbers = [1, 2, 3]`, he will say this is NOT an assignment, but pattern matching. It would make you wonder `Hmm...Why a new name for something that is so commonly understood and used?` 
+
+To help you understand the Elixir Pro talk, let us start translating each line from your python code into Elixir equivalent. 
 
 Now type this first line into iex:
 
@@ -335,12 +338,13 @@ iex(2)> a, b, c = numbers
 
 **AI Elixir Mentor**
 
-So, you thought that you're gonna learn by executing everything perfectly. Had I given you the proper syntax, I am sure you will have NOT noticed that there is a closing and opening bracket around `a, b, c` . By making a mistake, now you learnt that things are different from python here. To me, this is the essence of learning by doing - you actively experiment by doing things, off the track, to see how Elixir works. 
+So, you thought that you're gonna learn by executing everything perfectly?! 
+
+Had I given you the proper syntax, I am sure you will have NOT noticed that there is a closing and opening bracket around `a, b, c` . By making a mistake, now you learnt that things are different from python here. To me, this is the essence of learning by doing - you actively experiment by doing things to see how Elixir works, sometimes intentionally committing a mistake to see how Elixir reacts to that.
+
 So you got to experience how Elixir reports error. Even though it is NOT clear why there is a syntax error before the comma, you can see that the stack trace and the overall error reporting is much shorter and sweeter compared to Python. 
 
 But before we see the right syntax to make this statement work, let us understand how this ACTUALLY works in python. Most people don't know how it works. Once you know how it works, you will see the elegance behind the design of Elixir. 
-
-### Python's unpacking process:
 
 ```python
 numbers = [1, 2, 3]
