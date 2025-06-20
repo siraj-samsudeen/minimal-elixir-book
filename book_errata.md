@@ -1,0 +1,12 @@
+- fix the headings so that the chapter numbers flow correctly
+- detour on assignment seems quite repetitive
+- in immutability, method chaining equivalent in elixir uses intermediate variables, but it is not clear why method chaining is not possible - as the methods don't exist on objects. So module.function pattern should be introduced BEFORE this for this to make sense. 
+- `Detour - How Functions are Organized in Elixir vs Python` can be moved up here.
+- how immutability uses less memory - check the garbage collection code sample for accuracy - I think Dave had a better explanation
+- loop beginning part seems a bit disconnected - 3 functional patterns are great. but do we really need to mention piping as the 3rd key idea and keep pushing it? Why not introduce it right after immutability and then look at 3 functional patterns? 
+- upcase vs uppercase discussion - seems out of place - really needed? 
+- Detour on Expressions
+  - part 2 and 4 both uses conditionals and are repeating similar information
+  - pattern matching/assignment is also repetitive - this uses piping which is not introduced yet
+- `let us see why parantheses are optional.` seems sudden and parantheses are not discussed in the section before. 
+- List.flatten code is missing in the example

@@ -71,3 +71,9 @@ receive do
     IO.puts("Linked process #{inspect(pid)} exited with reason: #{inspect(reason)}")
 end
 ```
+
+## Regex
+
+```elixir
+Regex.replace
+```
