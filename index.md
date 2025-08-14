@@ -1,9 +1,4 @@
----
-title: Minimal Elixir to be Productive in Phoenix
----
-
-
-## Python Pro meets AI Mentor to Learn Elixir using 80/20 Rule
+# Python Pro meets AI Mentor to Learn Elixir using 80/20 Rule
 
 
 ## Preface
@@ -53,8 +48,8 @@ So, where should I start with Elixir?
 
 Here are 3 key ideas that you will see mentioned a lot in Elixir - we will go through some hands-on exercises to understand them.
 
-1. Immutability by default
-2. Pattern matching
+1. Pattern matching
+2. Immutability by default
 3. Piping as way to use Functions for transformations
 
 But before we get started, make you have installed `iex` - the interactive Elixir shell running in your system. 
@@ -259,7 +254,7 @@ Let us get started with the first concept - pattern matching. Do you remember ho
 
 Destructuring (also called unpacking) in Python allows you to assign elements from a list (or any other iterable, if I want to get more precise) to multiple variables in a single statement. 
 
-```py
+```python
 numbers = [1, 2, 3]
 a, b, c = numbers
 print(a, b, c) #> 1, 2, 3
@@ -402,7 +397,7 @@ What happens? And then see if you can figure out how to display all three values
 **Python Pro**
 
 No I could not figure it out. I tried `IO.puts(a,b)` and it reported an error about FunctionClause - that is weird - I was expecting it to say that print/2 is not found. 
-```
+```elixir
 iex(8)> IO.puts(a, b)
 ** (FunctionClauseError) no function clause matching in IO.puts/2
 
@@ -741,7 +736,6 @@ x = 5
 
 What do you think will happen now? And why?
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -812,11 +806,11 @@ This works **both directions** like algebra!
 
 ## Side-by-Side Comparison
 
-| Context | Expression | Meaning | Bidirectional? |
-|---------|------------|---------|----------------|
-| **Algebra** | `x = a + 1` | "x equals a plus 1" | ✅ Yes |
-| **Python** | `x = a + 1` | "assign a plus 1 to x" | ❌ No |
-| **Elixir** | `x = a + 1` | "x matches a plus 1" | ✅ Yes |
+| Context     | Expression  | Meaning                | Bidirectional? |
+| ----------- | ----------- | ---------------------- | -------------- |
+| **Algebra** | `x = a + 1` | "x equals a plus 1"    | ✅ Yes          |
+| **Python**  | `x = a + 1` | "assign a plus 1 to x" | ❌ No           |
+| **Elixir**  | `x = a + 1` | "x matches a plus 1"   | ✅ Yes          |
 
 ## Why This Matters
 
@@ -1112,7 +1106,6 @@ Try this and see what happens when you have exactly 2 elements: `[first, second 
 
 What do you think `rest` will be?
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1150,7 +1143,6 @@ In Elixir, you'd need to use other functions like `List.last/1` or `Enum.take/2`
 
 This is one area where Python's unpacking is more flexible than Elixir's pattern matching.
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1172,7 +1164,6 @@ You've discovered an important principle: always question the hype around any te
 
 So what do you think - should we explore some areas where Elixir's pattern matching *is* more powerful than Python, or do you want to keep poking holes in my Elixir enthusiasm? 😉
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1280,7 +1271,6 @@ Now, how would you "add" 4 to this list? There's no `append` method. Try typing 
 
 What do you think happens when you try to "modify" a list in Elixir?
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1306,9 +1296,7 @@ new_numbers = numbers ++ [5]
 
 The key insight: Instead of modifying existing data, Elixir creates new data structures. This means `numbers` will always contain `[1, 2, 3]` no matter what you do with `new_numbers`.
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1354,7 +1342,6 @@ Notice the square brackets around `5`? Now you're concatenating two proper lists
 
 Try the corrected version and see how it displays now!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1381,9 +1368,7 @@ Notice that in all these operations, the original `numbers` list never changed. 
 
 Let's test your understanding: If you have a function that needs to "modify" a list, what does it actually do in Elixir? And how would you use the result?
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1415,7 +1400,6 @@ But this gets verbose. That's where our third core concept comes in: **piping**!
 
 We'll cover that next, but first - try creating a list that starts with `[1, 2, 3]`, adds `4` to the end, then adds `0` to the beginning. What do you get?
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1441,9 +1425,7 @@ The downside is that chaining operations can get verbose with intermediate varia
 
 Ready to learn about **piping** - Elixir's elegant solution for chaining operations?
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -1939,7 +1921,6 @@ prices = [10.0, 25.50, 8.75]
 
 Try translating this to Elixir. You already have all the ingredients you need!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -2033,7 +2014,7 @@ This is the **Functional way**: "Hey String module, create an uppercase version 
 
 ## The Mental Model Difference
 
-### **Python: Methods Belong to Objects**
+### Python: Methods Belong to Objects
 ```python
 # Methods are attached to the data
 text = "hello world"
@@ -2045,7 +2026,7 @@ numbers = [1, 2, 3]
 numbers.append(4)   # Method called ON the list
 ```
 
-### **Elixir: Functions Belong to Modules**
+### Elixir: Functions Belong to Modules
 ```elixir
 # Functions live in modules, data is passed TO them
 text = "hello world"
@@ -2119,7 +2100,6 @@ It's like learning that "elevator" (US) vs "lift" (UK) - same concept, different
 
 The good news: once you learn a few modules, the patterns become predictable.
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -2394,7 +2374,7 @@ Math.pow 2, 3
 
 We have NOT covered piping in detail, but just skim it to get an idea - this is intended as a starter to whet your appetite; full-course will be served in due time.
 
-```
+```elixir
 # Chained function calls (pipe operator)
 "hello world"
 |> String.upcase
@@ -2556,7 +2536,7 @@ Think of it as saying: "Capture this and turn it into a function I can pass arou
 
 ## Two Types of Short Syntax
 
-### **Type 1: Capturing Existing Functions (`&Module.function/arity`)**
+### Type 1: Capturing Existing Functions (`&Module.function/arity`)
 
 When you want to "capture" an existing function to use it as an anonymous function:
 
@@ -2568,7 +2548,7 @@ When you want to "capture" an existing function to use it as an anonymous functi
 &String.length/1    # Same as: fn x -> String.length(x) end
 ```
 
-### **Type 2: Capturing Expressions (`&(&1 + something)`)**
+### Type 2: Capturing Expressions (`&(&1 + something)`)
 
 This is where the capture operator gets more interesting - you can "capture" entire expressions and turn them into functions automatically.
 
@@ -2952,7 +2932,6 @@ You'll encounter this pattern frequently in real Elixir code, so it's worth unde
 
 Ready to move on from these detours and get back to our functional patterns? We still have **FILTER** and **REDUCE** to explore!
 
-<!-- no tool use -->
 
 ## Core Functional Pattern 2 - Filter
 
@@ -2964,7 +2943,7 @@ That was a lot of detours - But before we tackle the next pattern - can you do 2
 
 ## Overall Summary: Everything We've Covered So Far
 
-### **Core Concepts Mastered** ✅
+### Core Concepts Mastered ✅
 
 **1. Pattern Matching**
 - `=` as match operator (bidirectional equality, not assignment)
@@ -2999,14 +2978,14 @@ That was a lot of detours - But before we tackle the next pattern - can you do 2
 
 ## Functional Patterns Summary
 
-### **The 3 Core Patterns**
+### The 3 Core Patterns
 1. **MAP** - Transform each item (same number out as in)
 2. **FILTER** - Keep only some items (fewer or same number out)
 3. **REDUCE** - Combine all into one result (single value out)
 
-### **What We've Covered**
+### What We've Covered
 
-**MAP Pattern** ✅ **COMPLETED**
+**MAP Pattern** ✅
 - `Enum.map(collection, transformation_function)`
 - Examples mastered:
   - Uppercasing strings: `Enum.map(fruits, fn x -> String.upcase(x) end)`
@@ -3023,7 +3002,6 @@ That was a lot of detours - But before we tackle the next pattern - can you do 2
 
 Ready to tackle **FILTER**?
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3122,7 +3100,6 @@ numbers = [1, -2, 3, -4, 5, 0]
 
 This should be even simpler than the string example. Give it a shot!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3151,9 +3128,7 @@ For this one, you'll need to find the Elixir equivalent of Python's `startswith(
 
 Give it a try!
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3178,7 +3153,7 @@ But with different conditions:
 - Numeric comparison: `x > 0`  
 - String pattern: `String.starts_with?(x, "a")`
 
-## Filter Pattern Summary ✅ **COMPLETED**
+## Filter Pattern Summary ✅
 
 You've mastered filtering! The pattern is always:
 - Input: A collection
@@ -3187,7 +3162,6 @@ You've mastered filtering! The pattern is always:
 
 Ready to tackle the final pattern: **REDUCE**? This one combines all items into a single result - it's the most powerful of the three patterns!
 
-<!-- no tool use -->
 
 ## Core Functional Pattern 3 - Reduce
 
@@ -3242,7 +3216,6 @@ The reduce pattern is a bit different from map and filter - it builds up a resul
 
 Give it a try!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3276,9 +3249,7 @@ Now translate **both versions** to Elixir:
 
 This will help you understand both the convenient shortcut and the underlying pattern!
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3369,7 +3340,6 @@ The first solution is much cleaner and more idiomatic. Elixir has a built-in `ma
 
 Try the first solution - it should work perfectly and give you `9` as the result.
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3408,9 +3378,7 @@ So `Enum.max([3, 1, 4, 1, 5, 9, 2])` and `Kernel.max(5, 3)` serve different purp
 
 This is why your reduce solution works perfectly - you're using the two-argument version inside the reduction.
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3450,7 +3418,6 @@ Now translate **both versions** to Elixir:
 
 Try it out!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3498,7 +3465,7 @@ I can see your thought process in those three attempts:
 2. `acc <> "," <> x` → `"Hello,beautiful,world"` (comma but no space)
 3. `acc <> ", " <> x` → `"Hello, beautiful, world"` (perfect!)
 
-## Reduce Pattern Summary ✅ **COMPLETED**
+## Reduce Pattern Summary ✅
 
 You've now mastered all three examples:
 
@@ -3521,9 +3488,7 @@ You've mastered:
 
 These three patterns handle 90% of all data processing tasks you'll encounter. Ready to put it all together with **piping**?
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3533,7 +3498,7 @@ That is great - let us summarize the 3 core functional patterns first and make s
 
 ## Summary: The 3 Core Functional Patterns
 
-### **MAP** - Transform Each Item
+### MAP - Transform Each Item
 **Pattern:** Same number of items out as in, but transformed
 **Syntax:** `Enum.map(collection, fn item -> transformation end)`
 **Examples:**
@@ -3541,7 +3506,7 @@ That is great - let us summarize the 3 core functional patterns first and make s
 - Add tax: `Enum.map(prices, fn x -> x * 1.08 end)`
 - Get lengths: `Enum.map(words, fn x -> String.length(x) end)`
 
-### **FILTER** - Keep Only Some Items
+### FILTER - Keep Only Some Items
 **Pattern:** Fewer (or same) items out, but same values
 **Syntax:** `Enum.filter(collection, fn item -> boolean_condition end)`
 **Examples:**
@@ -3549,7 +3514,7 @@ That is great - let us summarize the 3 core functional patterns first and make s
 - Positive numbers: `Enum.filter(numbers, fn x -> x > 0 end)`
 - Starts with "a": `Enum.filter(fruits, fn x -> String.starts_with?(x, "a") end)`
 
-### **REDUCE** - Combine All Into One Result
+### REDUCE - Combine All Into One Result
 **Pattern:** Single result from entire collection
 **Syntax:** `Enum.reduce(collection, fn item, accumulator -> combination end)`
 **Examples:**
@@ -3944,9 +3909,7 @@ But the interactive approach you just discovered is often better for development
 
 Try converting your Exercise 2 solution using pipes now. You'll love how it reads like a recipe: "Take numbers, then filter positives, then square them, then sum them up."
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -3965,7 +3928,6 @@ Enum.sum(numbers)
 
 Now try converting this to use the pipe operator! Start with the initial list and pipe it through each transformation step by step.
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -4008,9 +3970,7 @@ length(words)
 
 Can you convert this to a beautiful pipeline?
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -4071,7 +4031,6 @@ For simple function calls like `&String.split/1`, the capture operator is great.
 
 Your final pipeline is beautiful - it reads like a story from top to bottom!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -4081,21 +4040,21 @@ ok great - can you please summarize pipe operator and is there anything else to 
 
 ## Pipe Operator Summary
 
-### **Basic Concept**
+### Basic Concept
 The pipe operator `|>` takes the result from the left and passes it as the **first argument** to the function on the right.
 
 ```elixir
 data |> function(args)  # Same as: function(data, args)
 ```
 
-### **Key Benefits**
+### Key Benefits
 ✅ **Readable**: Top-to-bottom flow like a recipe  
 ✅ **Debuggable**: Easy to inspect at each step with `|> IO.inspect()`  
 ✅ **Modular**: Easy to add/remove/reorder steps  
 ✅ **No nesting**: Eliminates confusing inside-out reading  
 ✅ **REPL-friendly**: IEx auto-pipes when you start with `|>`  
 
-### **When to Use Pipes vs Regular Syntax**
+### When to Use Pipes vs Regular Syntax
 ```elixir
 # Good for pipes - simple transformations
 data |> String.upcase() |> String.reverse()
@@ -4109,7 +4068,7 @@ numbers |> Enum.filter(&(&1 > 0)) |> Enum.sum()
 
 ## Advanced Piping Features
 
-### **1. The `then/2` Function**
+### 1. The `then/2` Function
 When you need to use the piped value in a complex expression:
 ```elixir
 name
@@ -4117,7 +4076,7 @@ name
 |> then(fn clean_name -> "Hello, #{clean_name}!" end)
 ```
 
-### **2. Debugging with IO.inspect**
+### 2. Debugging with IO.inspect
 ```elixir
 data
 |> transform_step_1()
@@ -4126,7 +4085,7 @@ data
 |> IO.inspect()  # Quick peek
 ```
 
-### **3. Parentheses Rules in Pipes**
+### 3. Parentheses Rules in Pipes
 ```elixir
 # Optional parentheses (clean)
 data |> String.upcase |> String.reverse
@@ -4140,7 +4099,6 @@ data |> String.replace("old", "new")
 
 That covers the essential piping knowledge! The pipe operator is one of Elixir's most beloved features.
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -4150,7 +4108,7 @@ Ok, I think that we have covered 3 key ideas that we started with - pattern matc
 
 ## Summary: The 3 Core Elixir Concepts
 
-### **1. Pattern Matching** ✅
+### 1. Pattern Matching ✅
 **Concept**: `=` is a match operator (bidirectional equality), not assignment
 ```elixir
 [a, b, c] = [1, 2, 3]        # Explicit structure matching
@@ -4159,7 +4117,7 @@ Ok, I think that we have covered 3 key ideas that we started with - pattern matc
 ```
 **Benefits**: Data validation, concise destructuring, less error-checking code
 
-### **2. Immutability** ✅
+### 2. Immutability ✅
 **Concept**: Data never changes after creation - functions return new data
 ```elixir
 list = [1, 2, 3]
@@ -4168,7 +4126,7 @@ new_list = [0 | list]        # Creates new list, original unchanged
 ```
 **Benefits**: No surprise mutations, safe sharing, easier debugging, memory-efficient through structural sharing
 
-### **3. Piping** ✅
+### 3. Piping ✅
 **Concept**: `|>` passes result as first argument to next function
 ```elixir
 data
@@ -4178,12 +4136,12 @@ data
 ```
 **Benefits**: Readable top-to-bottom flow, easy debugging, modular transformations
 
-## **The 3 Functional Patterns** ✅
+## The 3 Functional Patterns ✅
 - **MAP**: Transform each item → `Enum.map`
 - **FILTER**: Keep only some items → `Enum.filter`  
 - **REDUCE**: Combine all into one → `Enum.reduce`
 
-## **How They Work Together**
+## How They Work Together
 ```elixir
 ["Apple", "BANANA", "cherry"]
 |> Enum.map(&String.downcase/1)     # Transform each
@@ -4193,7 +4151,6 @@ data
 
 These three concepts form the foundation of thinking functionally in Elixir!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -4203,7 +4160,7 @@ ok what comes next?
 
 Great question! You've built a solid foundation in Elixir's core concepts. Here are the natural next steps:
 
-## **Immediate Next Steps**
+## Immediate Next Steps
 
 **1. Data Structures Beyond Lists**
 - **Tuples**: `{:ok, result}` - fixed-size, fast access
@@ -4220,7 +4177,7 @@ Great question! You've built a solid foundation in Elixir's core concepts. Here 
 - Named functions vs anonymous functions
 - Function clauses and guards
 
-## **Phoenix-Focused Path**
+## Phoenix-Focused Path
 
 Since your goal is to evaluate Phoenix vs Rails, you could also jump more directly into Phoenix fundamentals:
 
@@ -4240,7 +4197,6 @@ What feels more appealing to you right now:
 
 Your learning style and timeline will help determine the best path!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -4250,29 +4206,29 @@ i want to do a phoeix-focused path, but let us not jump into phoenix just yet. M
 
 Perfect! Building toward a Phoenix to-do or blog app is an excellent goal. Let me map out the essential Elixir concepts you'll need to understand Phoenix code comfortably.
 
-## **Essential Elixir for Phoenix Development**
+## Essential Elixir for Phoenix Development
 
-### **Phase 1: Data Structures (Next)**
+### Phase 1: Data Structures (Next)
 You'll see these everywhere in Phoenix:
 - **Maps**: `%{title: "Learn Elixir", completed: false}` - your data models
 - **Tuples**: `{:ok, user}` vs `{:error, reason}` - Phoenix's return patterns
 - **Keyword Lists**: `[class: "btn", id: "submit"]` - HTML attributes
 
-### **Phase 2: Pattern Matching in Practice**
+### Phase 2: Pattern Matching in Practice
 - **case** statements - handling different outcomes
 - **with** statements - chaining operations that might fail
 - **Function clauses** - multiple function definitions with different patterns
 
-### **Phase 3: Modules and Functions**
+### Phase 3: Modules and Functions
 - Creating your own modules
 - Public vs private functions
 - How Phoenix organizes code into modules
 
-### **Phase 4: Error Handling**
+### Phase 4: Error Handling
 - `{:ok, result}` vs `{:error, reason}` pattern
 - How to handle failures gracefully
 
-### **Phase 5: Basic Phoenix Concepts**
+### Phase 5: Basic Phoenix Concepts
 - Understanding MVC in Phoenix
 - How requests flow through the application
 - Templates and data binding
@@ -4281,9 +4237,7 @@ This sequence will prepare you to read and understand Phoenix code naturally. Ea
 
 **Ready to start with Maps and Tuples?** These are the data structures you'll use constantly in Phoenix apps.
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 ## Maps
 
@@ -5099,7 +5053,6 @@ new_attrs = [class: "btn-large"] ++ attrs
 
 What do you get when you run these?
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -5200,7 +5153,6 @@ end)
 
 These exercises show you the practical Phoenix patterns you'll encounter: extracting field information, filtering configurations, and building HTML attributes from keyword lists!
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -5246,9 +5198,7 @@ These will help you understand Phoenix's error handling and request processing p
 
 **Ready to tackle `case` statements?** They're perfect for handling the tuple patterns you just practiced!
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 ## Structs
 
@@ -5401,15 +5351,13 @@ completed_task = %{task1 | completed: true}
 
 What do you get when you run these?
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
 they work nicely. But what is that message when I tried to execute defmodule. By the way, what is defmodule? You have not yet covered it, I guess. 
 
-```
+```elixir
 warning: redefining module Task (current version loaded from /opt/homebrew/Cellar/elixir/1.18.3/lib/elixir/lib/elixir/ebin/Elixir.Task.beam)
 └─ iex:121: Task (module)
 
@@ -5478,9 +5426,7 @@ post = %BlogPost{title: "Hello", content: "World"}
 
 Try this version - no warnings!
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -5512,9 +5458,7 @@ Now let's move on to **control flow** - specifically the patterns that handle al
 
 Ready to learn how to handle success and error cases like a pro?
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 ## Control flow
 
@@ -5552,7 +5496,7 @@ end
 
 ## The 4 Main Control Flow Constructs
 
-### **1. `case` - Pattern Matching Control**
+### 1. `case` - Pattern Matching Control
 **Purpose:** Handle different data patterns  
 **Python equivalent:** Complex if/elif chains + type checking
 ```elixir
@@ -5563,7 +5507,7 @@ case api_call() do
 end
 ```
 
-### **2. `cond` - Condition-Based Control**
+### 2. `cond` - Condition-Based Control
 **Purpose:** Multiple conditions (like if/elif)  
 **Python equivalent:** if/elif/else chains
 ```elixir
@@ -5575,7 +5519,7 @@ cond do
 end
 ```
 
-### **3. `with` - Happy Path Programming**
+### 3. `with` - Happy Path Programming
 **Purpose:** Chain operations that might fail  
 **Python equivalent:** Nested try/catch or early returns
 ```elixir
@@ -5588,7 +5532,7 @@ else
 end
 ```
 
-### **4. `if/unless` - Simple Conditions**
+### 4. `if/unless` - Simple Conditions
 **Purpose:** Basic true/false decisions  
 **Python equivalent:** Simple if statements
 ```elixir
@@ -5601,12 +5545,12 @@ end
 
 ## Key Differences from Python
 
-| Python | Elixir | Why Different? |
-|--------|--------|----------------|
-| `if/elif/else` | `case` with patterns | Pattern matching is more powerful |
-| `try/except` | `case` with tuples | Errors are data, not exceptions |
-| Multiple returns | Single expression result | Everything is an expression |
-| Mutation in branches | New data in branches | Immutability |
+| Python               | Elixir                   | Why Different?                    |
+| -------------------- | ------------------------ | --------------------------------- |
+| `if/elif/else`       | `case` with patterns     | Pattern matching is more powerful |
+| `try/except`         | `case` with tuples       | Errors are data, not exceptions   |
+| Multiple returns     | Single expression result | Everything is an expression       |
+| Mutation in branches | New data in branches     | Immutability                      |
 
 ## Phoenix Patterns You'll See
 
@@ -5639,9 +5583,7 @@ end
 
 **Ready to start with `case` statements?** They're the heart of Elixir's error handling!
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
 **Python Pro**
 
@@ -5773,7 +5715,5 @@ end
 
 What do you get when you run these?
 
-<!-- no tool use -->
 
-<!-- no tool use -->
 
