@@ -1,0 +1,1 @@
+Sitemap: https://siraj-samsudeen.github.io/minimal-elixir-book/sitemap.xml
