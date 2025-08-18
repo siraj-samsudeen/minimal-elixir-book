@@ -137,6 +137,7 @@ There are many other helpers available, here are some examples:
 Great observation! The `/1` and `/2` notation is how Elixir indicates function arity - another jargon for the number of arguments a function takes. Just note this term `arity` as you will see it used quite a lot in Elixir. 
 
 For example:
+
 - `i/1` means the `i` function that takes exactly 1 argument
 - `h/1` means the `h` function that takes exactly 1 argument
 - `h/0` means the `h` function that takes 0 arguments (which is what you just ran)
@@ -177,6 +178,7 @@ In Elixir, these are actually different functions, and the language will select 
 But let us get too deep into those differences now - My main aim now is to familiarize you with the iex shell. So, let us get back to that. 
 
 Let me summarize - there are 2 ways to access the documentation 
+
 1. All the documentation of all packages in Elixir including the core packages are available in `hexdocs.pm`. 
 2. IEx’s `h` helper shows offline documentation for modules and functions that are part of Elixir itself or other libraries installed in your current project
 
@@ -426,6 +428,7 @@ The `FunctionClauseError` tells us that `IO.puts/2` exists (a function that take
 Looking at the error, it shows that `IO.puts/2` expects the first argument to be a device (like `:stdio` for standard output), not just any value.
 
 So `IO.puts` has two versions:
+
 - `IO.puts/1` - prints to standard output 
 - `IO.puts/2` - prints to a specific device. So, you when you called this function/arity combination, Elixir was expecting a device as the first arg. But you passed it a number. But don't worry about it for now - we will come back to this idea later.
 
@@ -552,21 +555,25 @@ Absolutely! Let's summarize what you've learned so far:
 ## Key Concepts Covered
 
 **1. Pattern Matching vs Assignment**
+
 - Elixir uses `=` as a "match operator", not assignment
 - Must be explicit with structure: `[a, b, c] = list` (not `a, b, c = list`)
 - Always returns the value on the right side
 
 **2. IEx Interactive Shell**
+
 - Every expression returns a value (unlike Python REPL)
 - `h` for help, `i` for inspecting data types
 - Function arity notation: `function_name/number_of_arguments`
 
 **3. Printing and Output**
+
 - `IO.puts` for human-readable output (converts types automatically)
 - `IO.inspect` for debugging (prints AND returns the value)
 - String interpolation: `"#{variable}"` (similar to Python f-strings, but pay attention to the extra weight of the pound symbol)
 
 **4. Key Differences from Python**
+
 - Every expression returns a value
 - Atoms like `:ok` indicate status
 
@@ -700,6 +707,7 @@ This pattern matches a list with exactly one element, binding `first` to `1`.
 Now, here's the key insight: when you write `x = 5`, this is really just pattern matching with the simplest possible pattern - a single variable! It's like matching a "list" with one element, but without the brackets.
 
 So "assignment" in Elixir is actually just pattern matching where:
+
 - Left side: a single variable pattern
 - Right side: a single value
 
@@ -754,6 +762,7 @@ Perfect! You've grasped the core concept of pattern matching.
 The error `no match of right hand side value: 5` tells us exactly what happened: Elixir tried to match the pattern `6` with the value `5`, and they don't match, so it failed.
 
 This is fundamentally different from assignment because:
+
 - **Assignment**: Always succeeds (overwrites the variable)
 - **Pattern matching**: Can fail if the patterns don't match
 
@@ -778,6 +787,7 @@ when I had read this, I did NOT really understand what Joe Armstrong was saying 
 x = a + 1
 ```
 This equation works **both ways**:
+
 - If `a = 5`, then `x = 6`
 - If `x = 6`, then `a = 5`
 - It's a **statement of equality** - both sides have the same value
@@ -787,6 +797,7 @@ This equation works **both ways**:
 x = a + 1  # Python
 ```
 This only works **one direction**:
+
 - Takes value of `a`, adds 1, stores result in `x`
 - You **cannot** write `a + 1 = x` (SyntaxError!)
 - It's an **action**: "compute and store"
@@ -1088,6 +1099,7 @@ Excellent! You've discovered that Python and Elixir handle head/tail decompositi
 ✅ Both fail when trying to extract from an empty list  
 
 The key difference is in error handling:
+
 - **Python**: Raises `ValueError` with a descriptive message
 - **Elixir**: Raises `MatchError` - pattern matching failed
 
@@ -1122,6 +1134,7 @@ first, *middle, last = [1, 2, 3, 4] # I want the first and last alone and the re
 Great question! Unfortunately, Elixir's `|` operator is more limited than Python's `*` operator. 
 
 In Elixir, you can **only** use `|` to separate the **beginning** of a list from the **rest**. You cannot:
+
 - Extract from the end: `*first, last` ❌
 - Extract from the middle: `first, *middle, last` ❌
 
@@ -1178,11 +1191,13 @@ We've covered the **core fundamentals** of pattern matching that you'll use 80% 
 ## What We've Covered ✅
 
 **1. Basic Concepts**
+
 - `=` as match operator (bidirectional equality)
 - Pattern matching vs assignment
 - Explicit structure matching: `[a, b, c] = list`
 
 **2. Practical Patterns**
+
 - Variables: `x = 5`
 - Lists: `[first, second, third] = list`
 - Ignoring values: `[first, _, third] = list`
@@ -1191,6 +1206,7 @@ We've covered the **core fundamentals** of pattern matching that you'll use 80% 
 - **Pin operator** `^` for matching existing variables
 
 **3. Key Benefits**
+
 - Data validation (crashes on mismatch)
 - Concise destructuring with constraints
 - Less error-checking code needed
@@ -1336,6 +1352,7 @@ new_numbers = numbers ++ [5]
 Notice the square brackets around `5`? Now you're concatenating two proper lists: `[1, 2, 3]` and `[5]`.
 
 **Summary of list operations:**
+
 - `[new_element | existing_list]` - prepends to front
 - `existing_list ++ [new_element]` - appends to end  
 - `existing_list ++ other_list` - concatenates two lists
@@ -1359,11 +1376,13 @@ Perfect! Now you see the difference:
 Notice that in all these operations, the original `numbers` list never changed. It's still `[1, 2, 3]`. This is **immutability** in action.
 
 **Benefits:**
+
 1. **No surprise mutations** - `numbers` will always be `[1, 2, 3]`
 2. **Safe sharing** - You can pass `numbers` to any function without worrying it will be modified
 3. **Easier debugging** - Data doesn't change unexpectedly
 
 **The trade-off:**
+
 - Creating new data structures uses more memory (but Elixir optimizes this behind the scenes)
 
 Let's test your understanding: If you have a function that needs to "modify" a list, what does it actually do in Elixir? And how would you use the result?
@@ -1446,6 +1465,7 @@ new_list = [0 | original]  # [0, 1, 2, 3]
 ```
 
 Behind the scenes:
+
 - `new_list` creates a new "head" node pointing to `0`
 - The tail points to the **same memory** as `original`
 - Only the new head node uses extra memory!
@@ -1478,6 +1498,7 @@ Ok we have covered 2 topics - pattern matching and immutability. Please summaris
 ## Summary So Far
 
 **1. Pattern Matching** ✅
+
 - `=` is match operator (bidirectional equality), not assignment
 - Explicit structure: `[a, b, c] = list`
 - Head/tail decomposition: `[head | tail] = list`
@@ -1485,6 +1506,7 @@ Ok we have covered 2 topics - pattern matching and immutability. Please summaris
 - Benefits: Concise code, built-in validation
 
 **2. Immutability** ✅
+
 - No mutations - data never changes after creation
 - Functions return new data instead of modifying existing
 - Safe sharing - no surprise side effects
@@ -1516,6 +1538,7 @@ Enum.each(numbers, fn num -> IO.puts(num * 2) end)
 ```
 
 But this Elixir code introduces two new concepts we have not yet covered:
+
 1. Enum module and its utility functions for working with collections like lists, tuples, etc.
 2. Anonymous functions
 
@@ -1524,6 +1547,7 @@ But before we cover these 2 new ideas, let us take a Detour to really understand
 ## Detour - Different paradigms to loop over a list
 
 When working with collections, **looping over items (iteration)** is one of the most common operations. You constantly need to:
+
 - Process each item (validate, transform, display)
 - Find specific items (search, filter)
 - Aggregate data (sum, count, analyze)
@@ -1864,6 +1888,7 @@ To figure out what function in Enum to use, search for the first pattern name - 
 The last piece of the puzzle is to figure out a function to transform from lowercase to uppercase. Lookup docs `String.upcase` function in iex using `h String.upcase`. 
 
 Now try to piece these together! You have:
+
 - A list: `["apple", "banana", "cherry"]`
 - An Enum function that transforms each element
 - An anonymous function that uppercases a string
@@ -1905,6 +1930,7 @@ Enum.map(fruits, fn x -> String.upcase(x) end)
 ```
 
 Notice how similar they are! The main differences:
+
 - `list(map(...))` becomes `Enum.map(...)`
 - `lambda x:` becomes `fn x ->`
 - `x.upper()` becomes `String.upcase(x)`
@@ -1987,6 +2013,7 @@ print(result)  # "HELLO WORLD"
 ```
 
 **How it works:**
+
 - The string `"hello world"` is an **object**
 - The `upper()` method **belongs to** the string object
 - We call the method **on** the object: `text.upper()`
@@ -2005,6 +2032,7 @@ IO.puts(result)  # "HELLO WORLD"
 ```
 
 **How it works:**
+
 - The string `"hello world"` is just **data**
 - The `upcase` function **belongs to** the `String` module
 - We pass the data **to** the function: `String.upcase(text)`
@@ -2041,10 +2069,12 @@ List.insert_at(numbers, -1, 4) # Function takes list as argument
 ## Why This Difference Matters
 
 **Python's way**: Data carries behavior with it
+
 - `"hello".upper()` - the string knows how to uppercase itself
 - Each data type has its own methods
 
 **Elixir's way**: Behavior is separate from data
+
 - `String.upcase("hello")` - the String module knows how to work with strings
 - Data is just data, functions transform it
 
@@ -2119,10 +2149,12 @@ One of the most fundamental differences between Elixir and Python is how they ha
 ## The Big Difference
 
 **Python** has both **statements** and **expressions**:
+
 - **Statements** do things but don't return values (`if`, `for`, `def`, etc.)
 - **Expressions** calculate and return values (`2 + 3`, `len("hello")`, etc.)
 
 **Elixir** has only **expressions**:
+
 - Everything returns a value
 - Everything can be used wherever a value is expected
 
@@ -2297,10 +2329,12 @@ result = [1, 2, 3, 4, 5]
 ## The Mental Model
 
 **Python**: "Do this, then do that, then do the other thing"
+
 - Mix of statements (do things) and expressions (return values)
 - More verbose when chaining operations
 
 **Elixir**: "Calculate this value by combining these smaller values"
+
 - Everything returns a value
 - Natural composition and chaining
 - Functions are just expressions that return values
@@ -2455,11 +2489,13 @@ Enum.map(words, fn x -> String.length(x) end)
 Think of parentheses as **clarity markers**:
 
 ### Use parentheses when:
+
 - **Zero arguments**: Always required
 - **Nested calls**: Required for inner functions
 - **Complex expressions**: When it makes the code clearer
 
 ### Skip parentheses when:
+
 - **Simple, single function calls**: `IO.puts "hello"`
 - **Pipe operations**: `data |> transform |> output`
 - **The meaning is completely clear**: `String.upcase "hello"`
@@ -2946,6 +2982,7 @@ That was a lot of detours - But before we tackle the next pattern - can you do 2
 ### Core Concepts Mastered ✅
 
 **1. Pattern Matching**
+
 - `=` as match operator (bidirectional equality, not assignment)
 - Explicit structure matching: `[a, b, c] = list`
 - Head/tail decomposition: `[head | tail] = list`
@@ -2953,23 +2990,27 @@ That was a lot of detours - But before we tackle the next pattern - can you do 2
 - Pin operator `^` for matching existing variables
 
 **2. Immutability**
+
 - No mutations - data never changes after creation
 - Functions return new data instead of modifying existing
 - Safe sharing - no surprise side effects
 - Memory efficiency through structural sharing
 
 **3. IEx and Documentation**
+
 - Function arity notation: `function_name/number_of_arguments`
 - `h` for help, `i` for inspecting data types
 - Every expression returns a value
 
 **4. Key Language Features**
+
 - Everything is an expression (vs Python's statements + expressions)
 - Optional parentheses (with clear rules about when required)
 - Modules organize functions (vs Python's object methods)
 - String interpolation: `"#{variable}"`
 
 **5. Anonymous Functions**
+
 - Basic syntax: `fn x -> transformation end`
 - Capture operator: `&String.upcase/1` and `&(&1 * 2)`
 - Dot syntax for calling stored functions: `my_function.(args)`
@@ -2979,6 +3020,7 @@ That was a lot of detours - But before we tackle the next pattern - can you do 2
 ## Functional Patterns Summary
 
 ### The 3 Core Patterns
+
 1. **MAP** - Transform each item (same number out as in)
 2. **FILTER** - Keep only some items (fewer or same number out)
 3. **REDUCE** - Combine all into one result (single value out)
@@ -2986,6 +3028,7 @@ That was a lot of detours - But before we tackle the next pattern - can you do 2
 ### What We've Covered
 
 **MAP Pattern** ✅
+
 - `Enum.map(collection, transformation_function)`
 - Examples mastered:
   - Uppercasing strings: `Enum.map(fruits, fn x -> String.upcase(x) end)`
@@ -2993,10 +3036,12 @@ That was a lot of detours - But before we tackle the next pattern - can you do 2
   - String lengths: `Enum.map(words, fn x -> String.length(x) end)`
 
 **FILTER Pattern** ⏳ **NEXT UP**
+
 - Keep only items that meet a condition
 - Examples to explore: filtering by length, positive numbers, etc.
 
 **REDUCE Pattern** ⏳ **COMING SOON**
+
 - Combine all items into single result
 - Examples to explore: sum, max, count, join strings
 
@@ -3060,6 +3105,7 @@ words = ["cat", "elephant", "dog", "butterfly"]
 You'll need to find the right function in the `Enum` module. Try looking up "filter" in the Enum documentation (`h Enum` and search for filter-related functions).
 
 Once you find the right function, try translating this Python code to Elixir. You already know how to:
+
 - Write anonymous functions: `fn word -> ... end`
 - Get string length: `String.length(word)`
 - Compare with `>`
@@ -3149,6 +3195,7 @@ I'm glad you're enjoying the repetitive practice with variations! That's exactly
 `Enum.filter(collection, fn item -> boolean_condition end)`
 
 But with different conditions:
+
 - String length: `String.length(x) > 5`
 - Numeric comparison: `x > 0`  
 - String pattern: `String.starts_with?(x, "a")`
@@ -3156,6 +3203,7 @@ But with different conditions:
 ## Filter Pattern Summary ✅
 
 You've mastered filtering! The pattern is always:
+
 - Input: A collection
 - Function: Returns `true` (keep) or `false` (discard)
 - Output: Same values, but fewer items
@@ -3239,11 +3287,13 @@ reduce(lambda acc, x: acc + x, numbers, 0)  # Result: 15
 ```
 
 The reduce pattern works like this:
+
 - Start with an initial value (accumulator): `0`
 - For each item in the list: combine `accumulator + current_item`
 - The accumulator builds up: `0 + 1 = 1`, then `1 + 2 = 3`, then `3 + 3 = 6`, etc.
 
 Now translate **both versions** to Elixir:
+
 1. Find the Elixir equivalent of Python's `sum()`
 2. Find the Elixir equivalent of Python's `reduce()` and write the explicit version
 
@@ -3289,11 +3339,13 @@ reduce(lambda acc, x: max(acc, x), numbers)  # Result: 9
 ```
 
 The reduce pattern here:
+
 - Start with first element as accumulator: `3`
 - For each item: keep the larger of `accumulator` vs `current_item`
 - Builds up: `max(3,1)=3`, then `max(3,4)=4`, then `max(4,1)=4`, then `max(4,5)=5`, etc.
 
 Now translate **both versions** to Elixir:
+
 1. Find the Elixir equivalent of Python's `max()`
 2. Write the explicit reduce version
 
@@ -3371,6 +3423,7 @@ Kernel.max(5, 3)  # This works too!
 ```
 
 **Why the distinction?**
+
 - `Enum.max/1` - finds the maximum value **in a collection**
 - `Kernel.max/2` - finds the maximum **between two values**
 
@@ -3408,11 +3461,13 @@ reduce(lambda acc, x: acc + ", " + x, words)  # Result: "Hello, beautiful, world
 ```
 
 The reduce pattern here:
+
 - Start with first element as accumulator: `"Hello"`
 - For each remaining item: combine `accumulator + ", " + current_item`
 - Builds up: `"Hello" + ", " + "beautiful" = "Hello, beautiful"`, then `"Hello, beautiful" + ", " + "world" = "Hello, beautiful, world"`
 
 Now translate **both versions** to Elixir:
+
 1. Find the Elixir equivalent of Python's `", ".join()`
 2. Write the explicit reduce version using string concatenation
 
@@ -3461,6 +3516,7 @@ iex(54)> Enum.reduce(words, fn x, acc  -> acc <> ", " <>  x end)
 Perfect! You figured out the string concatenation operator `<>` and got it working.
 
 I can see your thought process in those three attempts:
+
 1. `acc <> x` → `"Hellobeautifulworld"` (no separator)
 2. `acc <> "," <> x` → `"Hello,beautiful,world"` (comma but no space)
 3. `acc <> ", " <> x` → `"Hello, beautiful, world"` (perfect!)
@@ -3470,11 +3526,13 @@ I can see your thought process in those three attempts:
 You've now mastered all three examples:
 
 **Convenient shortcuts:**
+
 - `Enum.sum(numbers)` 
 - `Enum.max(numbers)`
 - `Enum.join(words, ", ")`
 
 **Explicit reduce patterns:**
+
 - `Enum.reduce(numbers, fn x, acc -> x + acc end)`
 - `Enum.reduce(numbers, fn x, acc -> max(x, acc) end)`
 - `Enum.reduce(words, fn x, acc -> acc <> ", " <> x end)`
@@ -3482,6 +3540,7 @@ You've now mastered all three examples:
 ## 🎉 All Three Functional Patterns Complete!
 
 You've mastered:
+
 - **MAP**: Transform each item → `Enum.map`
 - **FILTER**: Keep only some items → `Enum.filter` 
 - **REDUCE**: Combine all into one result → `Enum.reduce`
@@ -3502,6 +3561,7 @@ That is great - let us summarize the 3 core functional patterns first and make s
 **Pattern:** Same number of items out as in, but transformed
 **Syntax:** `Enum.map(collection, fn item -> transformation end)`
 **Examples:**
+
 - Uppercase strings: `Enum.map(words, fn x -> String.upcase(x) end)`
 - Add tax: `Enum.map(prices, fn x -> x * 1.08 end)`
 - Get lengths: `Enum.map(words, fn x -> String.length(x) end)`
@@ -3510,6 +3570,7 @@ That is great - let us summarize the 3 core functional patterns first and make s
 **Pattern:** Fewer (or same) items out, but same values
 **Syntax:** `Enum.filter(collection, fn item -> boolean_condition end)`
 **Examples:**
+
 - Long words: `Enum.filter(words, fn x -> String.length(x) > 5 end)`
 - Positive numbers: `Enum.filter(numbers, fn x -> x > 0 end)`
 - Starts with "a": `Enum.filter(fruits, fn x -> String.starts_with?(x, "a") end)`
@@ -3518,6 +3579,7 @@ That is great - let us summarize the 3 core functional patterns first and make s
 **Pattern:** Single result from entire collection
 **Syntax:** `Enum.reduce(collection, fn item, accumulator -> combination end)`
 **Examples:**
+
 - Sum: `Enum.reduce(numbers, fn x, acc -> x + acc end)` or `Enum.sum(numbers)`
 - Max: `Enum.reduce(numbers, fn x, acc -> max(x, acc) end)` or `Enum.max(numbers)`
 - Join: `Enum.reduce(words, fn x, acc -> acc <> ", " <> x end)` or `Enum.join(words, ", ")`
@@ -3561,6 +3623,7 @@ Excellent work! You correctly applied all three patterns in sequence:
 ✅ **REDUCE**: `length(words)` to count the results  
 
 Your step-by-step approach with intermediate variables is perfect for learning. You can see exactly what happens at each stage:
+
 1. Mixed case → all lowercase
 2. 5 words → 4 words (filtered out "date")
 3. List → count of 4
@@ -3891,6 +3954,7 @@ Wow! That's incredible - you've discovered one of the most delightful features o
 Yes, IEx is smart enough to automatically pipe the result of the previous expression when you start a new line with `|>`. This makes interactive development absolutely magical - you can build up complex transformations step by step, seeing the result at each stage.
 
 This is **exactly** how experienced Elixir developers work:
+
 1. Start with some data
 2. Pipe it through one transformation
 3. See the result, make sure it's what you expect
@@ -3950,6 +4014,7 @@ iex(88)> |> Enum.sum
 Perfect! You've really got the hang of this. I love how you noticed the flexibility with parentheses - `|> Enum.sum` is so clean and readable.
 
 The pipeline now reads like natural language:
+
 - "Take these numbers"
 - "Filter to keep positive ones" 
 - "Map each to its square"
@@ -4137,6 +4202,7 @@ data
 **Benefits**: Readable top-to-bottom flow, easy debugging, modular transformations
 
 ## The 3 Functional Patterns ✅
+
 - **MAP**: Transform each item → `Enum.map`
 - **FILTER**: Keep only some items → `Enum.filter`  
 - **REDUCE**: Combine all into one → `Enum.reduce`
@@ -4163,16 +4229,19 @@ Great question! You've built a solid foundation in Elixir's core concepts. Here 
 ## Immediate Next Steps
 
 **1. Data Structures Beyond Lists**
+
 - **Tuples**: `{:ok, result}` - fixed-size, fast access
 - **Maps**: `%{name: "Alice", age: 30}` - key-value pairs (like Python dicts)
 - **Keyword Lists**: `[name: "Alice", age: 30]` - ordered key-value pairs
 
 **2. Control Flow**
+
 - **case** statements with pattern matching
 - **cond** for multiple conditions
 - **with** for happy path programming
 
 **3. Modules and Functions**
+
 - Defining your own modules
 - Named functions vs anonymous functions
 - Function clauses and guards
@@ -4182,15 +4251,18 @@ Great question! You've built a solid foundation in Elixir's core concepts. Here 
 Since your goal is to evaluate Phoenix vs Rails, you could also jump more directly into Phoenix fundamentals:
 
 **1. Basic Phoenix App**
+
 - Controllers, Views, Templates
 - Routing
 - LiveView basics
 
 **2. Database Integration**
+
 - Ecto (Elixir's database library)
 - Schemas and migrations
 
 What feels more appealing to you right now:
+
 - **A.** Continue building Elixir language skills with data structures and control flow?
 - **B.** Jump into a simple Phoenix application to see the web framework in action?
 - **C.** Something else you're curious about?
@@ -4210,25 +4282,30 @@ Perfect! Building toward a Phoenix to-do or blog app is an excellent goal. Let m
 
 ### Phase 1: Data Structures (Next)
 You'll see these everywhere in Phoenix:
+
 - **Maps**: `%{title: "Learn Elixir", completed: false}` - your data models
 - **Tuples**: `{:ok, user}` vs `{:error, reason}` - Phoenix's return patterns
 - **Keyword Lists**: `[class: "btn", id: "submit"]` - HTML attributes
 
 ### Phase 2: Pattern Matching in Practice
+
 - **case** statements - handling different outcomes
 - **with** statements - chaining operations that might fail
 - **Function clauses** - multiple function definitions with different patterns
 
 ### Phase 3: Modules and Functions
+
 - Creating your own modules
 - Public vs private functions
 - How Phoenix organizes code into modules
 
 ### Phase 4: Error Handling
+
 - `{:ok, result}` vs `{:error, reason}` pattern
 - How to handle failures gracefully
 
 ### Phase 5: Basic Phoenix Concepts
+
 - Understanding MVC in Phoenix
 - How requests flow through the application
 - Templates and data binding
@@ -4405,11 +4482,13 @@ def greet_person(_), do: "Hello, stranger!"
 ## Atom Keys vs String Keys
 
 **Use atom keys when:**
+
 - Working with internal application data structures
 - You know the keys at compile time
 - You want cleaner, more readable code with dot notation
 
 **Use string keys when:**
+
 - Receiving data from external sources (JSON, APIs)
 - Keys are dynamic or come from user input
 - Interfacing with external systems
@@ -4429,6 +4508,7 @@ def greet_person(_), do: "Hello, stranger!"
 ```
 
 What's happening is:
+
 - **First function clause**: Only matches if the argument is a map with a "name" key, and extracts that value into the variable `name`
 - **Second function clause**: Matches anything else (the `_` means "I don't care what this is")
 
@@ -4998,12 +5078,14 @@ keyword_list[:name]  # Returns "Alice" (first occurrence)
 ## When to Use Keyword Lists vs Maps
 
 **Use Keyword Lists when:**
+
 - Function options/configuration
 - HTML attributes (can have duplicates)
 - Order matters
 - You need duplicate keys
 
 **Use Maps when:**
+
 - Data modeling
 - Unique keys required
 - Fast key lookups needed
@@ -5391,6 +5473,7 @@ end
 You're absolutely right - I haven't covered modules yet! I jumped ahead because structs require modules.
 
 **Quick explanation:**
+
 - `defmodule` creates a new module (like a namespace/container for functions)
 - Modules organize related functions together
 - `defstruct` inside a module creates a struct type
@@ -5445,6 +5528,7 @@ Perfect! Now you have a solid understanding of all the essential data structures
 **Structs** - `%User{name: "Alice"}` - Typed data with validation  
 
 You now understand:
+
 - When to use each data structure
 - How they compare to Python equivalents
 - The Phoenix patterns you'll see in real applications
